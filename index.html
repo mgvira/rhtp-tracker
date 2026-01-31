@@ -408,6 +408,8 @@
         <th>Open Date</th>
         <th>Deadline</th>
         <th>Links</th>
+        <th>CMS App</th>
+        <th>Email</th>
         <th>Notes</th>
       </tr>
     </thead>
@@ -521,6 +523,8 @@ function exportToExcel() {
     { key: 'applicationOpenDate', label: 'Application Open Date' },
     { key: 'applicationDeadline', label: 'Application Deadline' },
     { key: 'programPageUrl', label: 'Program Page URL' },
+    { key: 'cmsApplicationUrl', label: 'CMS Application PDF' },
+    { key: 'rhtpEmail', label: 'RHTP Email' },
     { key: 'applicationLink', label: 'Application Link' },
     { key: 'notes', label: 'Notes' }
   ];
@@ -539,7 +543,7 @@ function exportToExcel() {
   xml += '<Style ss:ID="Wrap"><Alignment ss:WrapText="1" ss:Vertical="Top"/></Style>\n';
   xml += '</Styles>\n';
   xml += '<Worksheet ss:Name="RHTP Tracker"><Table>\n';
-  [120,130,280,160,200,100,160,160,320,320,500].forEach(w => { xml += '<Column ss:Width="' + w + '"/>\n'; });
+  [120,130,280,160,200,100,160,160,320,320,220,320,500].forEach(w => { xml += '<Column ss:Width="' + w + '"/>\n'; });
   xml += '<Row ss:Height="30">\n';
   cols.forEach(c => { xml += '<Cell ss:StyleID="Header"><Data ss:Type="String">' + esc(c.label) + '</Data></Cell>\n'; });
   xml += '</Row>\n';
@@ -586,6 +590,8 @@ fetch('rhtp_results.json')
       item.applicationOpenDate || '—',
       item.applicationDeadline || '—',
       renderLinks(item),
+      item.cmsApplicationUrl ? '<a href="' + item.cmsApplicationUrl + '" target="_blank">View PDF</a>' : '—',
+      item.rhtpEmail ? '<a href="mailto:' + item.rhtpEmail + '">' + item.rhtpEmail + '</a>' : '—',
       renderNotes(item.notes),
       // Hidden columns for filtering/sorting
       getStatusCategory(item),
@@ -604,12 +610,14 @@ fetch('rhtp_results.json')
         { title: 'State', className: 'state-name', responsivePriority: 1 },
         { title: 'FY2026 Award', className: 'award-cell', responsivePriority: 3 },
         { title: 'Subaward App', responsivePriority: 2 },
-        { title: 'Type', responsivePriority: 5 },
-        { title: 'Vendor Eligible', responsivePriority: 4 },
-        { title: 'Open Date', responsivePriority: 6 },
-        { title: 'Deadline', responsivePriority: 7 },
-        { title: 'Links', responsivePriority: 8, orderable: false },
-        { title: 'Notes', className: 'notes-cell', responsivePriority: 9, orderable: false },
+        { title: 'Type', responsivePriority: 7 },
+        { title: 'Vendor Eligible', responsivePriority: 6 },
+        { title: 'Open Date', responsivePriority: 8 },
+        { title: 'Deadline', responsivePriority: 9 },
+        { title: 'Links', responsivePriority: 5, orderable: false },
+        { title: 'CMS App', responsivePriority: 4, orderable: false },
+        { title: 'Email', responsivePriority: 10, orderable: false },
+        { title: 'Notes', className: 'notes-cell', responsivePriority: 11, orderable: false },
         { visible: false }, // status category
         { visible: false }  // vendor raw
       ],
@@ -640,8 +648,8 @@ fetch('rhtp_results.json')
     $.fn.dataTable.ext.search.push(function(settings, searchData, index, rowData) {
       var statusFilter = document.getElementById('filterStatus').value;
       var vendorFilter = document.getElementById('filterVendor').value;
-      var cat = rowData[9];  // hidden status category column
-      var vendor = rowData[10]; // hidden vendor column
+      var cat = rowData[11];  // hidden status category column
+      var vendor = rowData[12]; // hidden vendor column
 
       if (statusFilter !== 'all' && cat !== statusFilter) return false;
       if (vendorFilter === 'yes' && vendor !== 'Yes') return false;
@@ -653,7 +661,7 @@ fetch('rhtp_results.json')
   })
   .catch(e => {
     document.getElementById('rhtpTable').querySelector('tbody').innerHTML =
-      '<tr><td colspan="9" style="padding:20px;color:#999;">Error loading data. Make sure rhtp_results.json is in the same directory.</td></tr>';
+      '<tr><td colspan="11" style="padding:20px;color:#999;">Error loading data. Make sure rhtp_results.json is in the same directory.</td></tr>';
   });
 </script>
 </body>
