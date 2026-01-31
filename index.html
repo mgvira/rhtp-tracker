@@ -126,8 +126,8 @@
   table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before,
   table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control::before {
     all: unset;
-    content: '\25BE' !important; /* ▾ small down arrow */
-    font-size: 12px;
+    content: '\25BE' !important; /* ▾ down arrow */
+    font-size: 18px;
     color: #999;
     margin-right: 6px;
     vertical-align: middle;
@@ -143,8 +143,8 @@
   table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td.dtr-control::before,
   table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th.dtr-control::before {
     all: unset;
-    content: '\25B4' !important; /* ▴ small up arrow */
-    font-size: 12px;
+    content: '\25B4' !important; /* ▴ up arrow */
+    font-size: 18px;
     color: #555;
     margin-right: 6px;
     vertical-align: middle;
@@ -257,8 +257,9 @@
     border-top: 1px solid #ddd;
     background: #fff;
   }
-  /* Hide default DT search - we use filters row */
+  /* Hide default DT search and page length - we use filters row, always show all */
   div.dt-search { display: none; }
+  div.dt-length { display: none; }
   /* Style DT length & info */
   div.dt-length select {
     padding: 4px 8px;
@@ -401,9 +402,9 @@
       <tr>
         <th>State</th>
         <th>FY2026 Award</th>
-        <th>Status</th>
+        <th>Subaward App</th>
         <th>Type</th>
-        <th>Vendor</th>
+        <th>Vendor Eligible</th>
         <th>Open Date</th>
         <th>Deadline</th>
         <th>Links</th>
@@ -602,9 +603,9 @@ fetch('rhtp_results.json')
       columns: [
         { title: 'State', className: 'state-name', responsivePriority: 1 },
         { title: 'FY2026 Award', className: 'award-cell', responsivePriority: 3 },
-        { title: 'Status', responsivePriority: 2 },
+        { title: 'Subaward App', responsivePriority: 2 },
         { title: 'Type', responsivePriority: 5 },
-        { title: 'Vendor', responsivePriority: 4 },
+        { title: 'Vendor Eligible', responsivePriority: 4 },
         { title: 'Open Date', responsivePriority: 6 },
         { title: 'Deadline', responsivePriority: 7 },
         { title: 'Links', responsivePriority: 8, orderable: false },
@@ -613,8 +614,8 @@ fetch('rhtp_results.json')
         { visible: false }  // vendor raw
       ],
       order: [[0, 'asc']],
-      pageLength: 50,
-      lengthMenu: [[25, 50, -1], [25, 50, 'All']],
+      pageLength: -1,
+      paging: false,
       language: {
         search: 'Search:',
         lengthMenu: 'Show _MENU_',
