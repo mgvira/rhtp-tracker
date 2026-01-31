@@ -122,26 +122,43 @@
     vertical-align: top;
     border-bottom: 1px solid #eee;
   }
-  /* Responsive inline expand arrow */
-  table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control {
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-  }
-  table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before {
-    content: '\25BC'; /* down arrow ▼ */
-    display: inline-block;
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 10px;
+  /* Kill DataTables default green box icon completely */
+  table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control::before,
+  table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control::before {
+    all: unset;
+    content: '\25BE' !important; /* ▾ small down arrow */
+    font-size: 12px;
     color: #999;
-    transition: transform 0.2s;
+    margin-right: 6px;
+    vertical-align: middle;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: inline !important;
+    position: static !important;
+    border-radius: 0 !important;
   }
-  table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td.dtr-control::before {
-    content: '\25B2'; /* up arrow ▲ */
+  table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td.dtr-control::before,
+  table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th.dtr-control::before {
+    all: unset;
+    content: '\25B4' !important; /* ▴ small up arrow */
+    font-size: 12px;
     color: #555;
+    margin-right: 6px;
+    vertical-align: middle;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+    display: inline !important;
+    position: static !important;
+    border-radius: 0 !important;
+  }
+  table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control {
+    cursor: pointer;
   }
   /* Responsive child row styling */
   table.dataTable > tbody > tr.child ul.dtr-details {
@@ -379,7 +396,7 @@
 <div class="stats" id="statsBar"></div>
 
 <div class="table-wrap">
-  <table id="rhtpTable" class="display responsive nowrap" style="width:100%">
+  <table id="rhtpTable" class="display responsive" style="width:100%">
     <thead>
       <tr>
         <th>State</th>
