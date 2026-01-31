@@ -311,7 +311,8 @@ function renderTable(items) {
   const tbody = document.getElementById('tableBody');
   tbody.innerHTML = items.map((d, i) => {
     const links = [];
-    if (d.programPageUrl) links.push(`<a href="${d.programPageUrl}" target="_blank">Program Page</a>`);
+    if (d.programPageUrl && d.programPageUrl.startsWith('http')) links.push(`<a href="${d.programPageUrl}" target="_blank">Program Page</a>`);
+    else if (d.programPageUrl) links.push(`<span style="color:#999">${d.programPageUrl}</span>`);
     if (d.applicationLink) links.push(`<a href="${d.applicationLink}" target="_blank">Apply</a>`);
     const shortNote = truncate(d.notes, 120);
     const hasMore = d.notes && d.notes.length > 120;
