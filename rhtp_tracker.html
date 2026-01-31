@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RHTP Vendor/Subaward Application Tracker</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.5;
+  }
+  .header {
+    background: #2a2a2a;
+    color: #fff;
+    padding: 28px 40px;
+    border-bottom: 3px solid #555;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .header p {
+    font-size: 13px;
+    color: #bbb;
+    margin-top: 6px;
+  }
+  .controls {
+    background: #fff;
+    padding: 16px 40px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .controls label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+  }
+  .controls select, .controls input {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
+    background: #fff;
+  }
+  .controls input[type="text"] {
+    width: 240px;
+  }
+  .stats {
+    background: #fff;
+    padding: 12px 40px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+  }
+  .stat-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot-active { background: #333; }
+  .dot-imminent { background: #666; }
+  .dot-planned { background: #999; }
+  .dot-none { background: #ccc; }
+  .stat-count {
+    font-weight: 700;
+    color: #333;
+  }
+  .table-wrap {
+    padding: 20px 40px 40px;
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-size: 13px;
+  }
+  thead th {
+    background: #3a3a3a;
+    color: #fff;
+    padding: 10px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+  }
+  thead th:hover {
+    background: #4a4a4a;
+  }
+  thead th .sort-arrow {
+    margin-left: 4px;
+    font-size: 10px;
+    opacity: 0.5;
+  }
+  thead th.sorted .sort-arrow {
+    opacity: 1;
+  }
+  tbody tr {
+    border-bottom: 1px solid #eee;
+  }
+  tbody tr:hover {
+    background: #f9f9f9;
+  }
+  tbody td {
+    padding: 10px 12px;
+    vertical-align: top;
+  }
+  td.state-name {
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  td a {
+    color: #444;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  td a:hover {
+    color: #000;
+  }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-yes { background: #333; color: #fff; }
+  .badge-imminent { background: #666; color: #fff; }
+  .badge-planned { background: #999; color: #fff; }
+  .badge-no { background: #e8e8e8; color: #666; }
+  .badge-tbd { background: #f0f0f0; color: #888; }
+  td.notes-cell {
+    max-width: 400px;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.4;
+  }
+  td.award-cell {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .footer {
+    padding: 20px 40px;
+    font-size: 11px;
+    color: #999;
+    border-top: 1px solid #ddd;
+    background: #fff;
+  }
+  .expand-btn {
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 1px 6px;
+    font-size: 11px;
+    cursor: pointer;
+    color: #666;
+  }
+  .expand-btn:hover {
+    background: #eee;
+  }
+  .notes-short {
+    display: inline;
+  }
+  .notes-full {
+    display: none;
+  }
+  .notes-expanded .notes-short {
+    display: none;
+  }
+  .notes-expanded .notes-full {
+    display: inline;
+  }
+  @media (max-width: 900px) {
+    .header, .controls, .stats, .table-wrap, .footer {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>RHTP Vendor / Subaward Application Tracker</h1>
+  <p>CMS Rural Health Transformation Program &mdash; Downstream State Opportunities for Vendors, Subgrantees &amp; Partners &mdash; All 50 States</p>
+  <p style="margin-top:4px;">Last updated: January 30, 2026 &nbsp;|&nbsp; Data sourced from state .gov sites, CMS, SHVS, and public records</p>
+</div>
+
+<div class="controls">
+  <label for="filterStatus">Filter by Status:</label>
+  <select id="filterStatus" onchange="applyFilters()">
+    <option value="all">All States</option>
+    <option value="posted">Opportunity Posted</option>
+    <option value="imminent">Imminent / Coming Soon</option>
+    <option value="planned">RFA/RFP Planned</option>
+    <option value="none">No Opportunity Yet</option>
+  </select>
+  <label for="filterVendor">Vendor Eligible:</label>
+  <select id="filterVendor" onchange="applyFilters()">
+    <option value="all">All</option>
+    <option value="yes">Yes</option>
+    <option value="tbd">TBD</option>
+  </select>
+  <label for="searchBox">Search:</label>
+  <input type="text" id="searchBox" placeholder="State, agency, notes..." oninput="applyFilters()">
+  <button id="exportBtn" onclick="exportToExcel()" style="margin-left:auto;padding:6px 16px;background:#3a3a3a;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;">Download Excel</button>
+</div>
+
+<div class="stats" id="statsBar"></div>
+
+<div class="table-wrap">
+  <table id="rhtpTable">
+    <thead>
+      <tr>
+        <th data-col="state" onclick="sortTable('state')">State <span class="sort-arrow">&#9650;</span></th>
+        <th data-col="awardAmount" onclick="sortTable('awardAmount')">FY2026 Award <span class="sort-arrow">&#9650;</span></th>
+        <th data-col="fundingOpportunityPosted" onclick="sortTable('fundingOpportunityPosted')">Opportunity Status <span class="sort-arrow">&#9650;</span></th>
+        <th data-col="opportunityType" onclick="sortTable('opportunityType')">Type <span class="sort-arrow">&#9650;</span></th>
+        <th data-col="vendorEligible" onclick="sortTable('vendorEligible')">Vendor Eligible <span class="sort-arrow">&#9650;</span></th>
+        <th data-col="applicationOpenDate" onclick="sortTable('applicationOpenDate')">Open Date <span class="sort-arrow">&#9650;</span></th>
+        <th data-col="applicationDeadline" onclick="sortTable('applicationDeadline')">Deadline <span class="sort-arrow">&#9650;</span></th>
+        <th>Links</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <p><strong>Disclaimer:</strong> This tracker covers DOWNSTREAM state-level opportunities only (vendor/subaward/subgrant applications issued by states).
+  The state-to-CMS application process is complete. All 50 states received awards on December 29, 2025.
+  Most states are currently finalizing cooperative agreements with CMS and developing their RFA/RFP processes.
+  Data is based on publicly available information as of January 30, 2026 and may not reflect real-time updates.
+  Always verify directly with state program pages.</p>
+</div>
+
+<script>
+let data = [];
+let sortCol = 'state';
+let sortAsc = true;
+
+function getStatusCategory(item) {
+  const f = item.fundingOpportunityPosted.toLowerCase();
+  if (f === 'yes') return 'posted';
+  if (f === 'imminent') return 'imminent';
+  if (f.includes('rfa') || f.includes('rfp') || f.includes('competitive') || f.includes('planned') || f.includes('notification') || f.includes('interest')) return 'planned';
+  return 'none';
+}
+
+function getBadgeClass(item) {
+  const cat = getStatusCategory(item);
+  if (cat === 'posted') return 'badge-yes';
+  if (cat === 'imminent') return 'badge-imminent';
+  if (cat === 'planned') return 'badge-planned';
+  return 'badge-no';
+}
+
+function getVendorBadge(v) {
+  if (v === 'Yes') return 'badge-yes';
+  return 'badge-tbd';
+}
+
+function truncate(str, len) {
+  if (!str) return '';
+  if (str.length <= len) return str;
+  return str.substring(0, len) + '...';
+}
+
+function parseAward(s) {
+  if (!s) return 0;
+  return parseInt(s.replace(/[^0-9]/g, '')) || 0;
+}
+
+function renderStats() {
+  const counts = { posted: 0, imminent: 0, planned: 0, none: 0 };
+  data.forEach(d => counts[getStatusCategory(d)]++);
+  document.getElementById('statsBar').innerHTML = `
+    <div class="stat-item"><span class="stat-dot dot-active"></span> <span class="stat-count">${counts.posted}</span> Opportunity Posted</div>
+    <div class="stat-item"><span class="stat-dot dot-imminent"></span> <span class="stat-count">${counts.imminent}</span> Imminent / Coming Soon</div>
+    <div class="stat-item"><span class="stat-dot dot-planned"></span> <span class="stat-count">${counts.planned}</span> RFA/RFP Planned or In Dev</div>
+    <div class="stat-item"><span class="stat-dot dot-none"></span> <span class="stat-count">${counts.none}</span> No Opportunity Yet</div>
+    <div class="stat-item" style="margin-left:auto;color:#888;">Total: <span class="stat-count">50</span> states &nbsp;|&nbsp; $10B FY2026</div>
+  `;
+}
+
+function renderTable(items) {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = items.map((d, i) => {
+    const links = [];
+    if (d.programPageUrl) links.push(`<a href="${d.programPageUrl}" target="_blank">Program Page</a>`);
+    if (d.applicationLink) links.push(`<a href="${d.applicationLink}" target="_blank">Apply</a>`);
+    const shortNote = truncate(d.notes, 120);
+    const hasMore = d.notes && d.notes.length > 120;
+    return `<tr>
+      <td class="state-name">${d.state}</td>
+      <td class="award-cell">${d.awardAmount || 'N/A'}</td>
+      <td><span class="badge ${getBadgeClass(d)}">${d.fundingOpportunityPosted}</span></td>
+      <td>${d.opportunityType || 'N/A'}</td>
+      <td><span class="badge ${getVendorBadge(d.vendorEligible)}">${d.vendorEligible}</span></td>
+      <td>${d.applicationOpenDate || '—'}</td>
+      <td>${d.applicationDeadline || '—'}</td>
+      <td style="white-space:nowrap">${links.join('<br>') || '—'}</td>
+      <td class="notes-cell" id="notes-${i}">
+        <span class="notes-short">${shortNote}</span>
+        ${hasMore ? `<span class="notes-full">${d.notes}</span> <button class="expand-btn" onclick="toggleNotes(${i})">${hasMore ? 'more' : ''}</button>` : ''}
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function toggleNotes(i) {
+  const el = document.getElementById('notes-' + i);
+  const btn = el.querySelector('.expand-btn');
+  el.classList.toggle('notes-expanded');
+  btn.textContent = el.classList.contains('notes-expanded') ? 'less' : 'more';
+}
+
+function sortTable(col) {
+  if (sortCol === col) {
+    sortAsc = !sortAsc;
+  } else {
+    sortCol = col;
+    sortAsc = true;
+  }
+  document.querySelectorAll('thead th').forEach(th => {
+    th.classList.remove('sorted');
+    if (th.dataset.col === col) th.classList.add('sorted');
+  });
+  applyFilters();
+}
+
+function applyFilters() {
+  const statusFilter = document.getElementById('filterStatus').value;
+  const vendorFilter = document.getElementById('filterVendor').value;
+  const search = document.getElementById('searchBox').value.toLowerCase();
+
+  let filtered = data.filter(d => {
+    if (statusFilter !== 'all' && getStatusCategory(d) !== statusFilter) return false;
+    if (vendorFilter === 'yes' && d.vendorEligible !== 'Yes') return false;
+    if (vendorFilter === 'tbd' && d.vendorEligible !== 'TBD') return false;
+    if (search) {
+      const haystack = (d.state + ' ' + d.leadAgency + ' ' + d.notes + ' ' + d.opportunityType + ' ' + d.awardAmount).toLowerCase();
+      if (!haystack.includes(search)) return false;
+    }
+    return true;
+  });
+
+  filtered.sort((a, b) => {
+    let va, vb;
+    if (sortCol === 'awardAmount') {
+      va = parseAward(a.awardAmount);
+      vb = parseAward(b.awardAmount);
+    } else if (sortCol === 'fundingOpportunityPosted') {
+      const order = { posted: 0, imminent: 1, planned: 2, none: 3 };
+      va = order[getStatusCategory(a)] ?? 4;
+      vb = order[getStatusCategory(b)] ?? 4;
+    } else {
+      va = (a[sortCol] || '').toLowerCase();
+      vb = (b[sortCol] || '').toLowerCase();
+    }
+    if (va < vb) return sortAsc ? -1 : 1;
+    if (va > vb) return sortAsc ? 1 : -1;
+    return 0;
+  });
+
+  renderTable(filtered);
+}
+
+function exportToExcel() {
+  // Build XML Spreadsheet (opens natively in Excel, Numbers, LibreOffice)
+  const cols = [
+    { key: 'state', label: 'State' },
+    { key: 'awardAmount', label: 'FY2026 Award' },
+    { key: 'leadAgency', label: 'Lead Agency' },
+    { key: 'fundingOpportunityPosted', label: 'Opportunity Status' },
+    { key: 'opportunityType', label: 'Opportunity Type' },
+    { key: 'vendorEligible', label: 'Vendor Eligible' },
+    { key: 'applicationOpenDate', label: 'Application Open Date' },
+    { key: 'applicationDeadline', label: 'Application Deadline' },
+    { key: 'programPageUrl', label: 'Program Page URL' },
+    { key: 'applicationLink', label: 'Application Link' },
+    { key: 'notes', label: 'Notes' }
+  ];
+
+  const esc = s => {
+    if (!s) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  };
+
+  let xml = '<?xml version="1.0"?>\n';
+  xml += '<?mso-application progid="Excel.Sheet"?>\n';
+  xml += '<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"\n';
+  xml += ' xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">\n';
+
+  // Styles
+  xml += '<Styles>\n';
+  xml += '<Style ss:ID="Default"><Font ss:FontName="Calibri" ss:Size="11"/></Style>\n';
+  xml += '<Style ss:ID="Header"><Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1" ss:Color="#FFFFFF"/><Interior ss:Color="#3A3A3A" ss:Pattern="Solid"/><Alignment ss:Horizontal="Center" ss:WrapText="1"/></Style>\n';
+  xml += '<Style ss:ID="Posted"><Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1"/><Interior ss:Color="#D5E8D4" ss:Pattern="Solid"/></Style>\n';
+  xml += '<Style ss:ID="Imminent"><Font ss:FontName="Calibri" ss:Size="11"/><Interior ss:Color="#FFF2CC" ss:Pattern="Solid"/></Style>\n';
+  xml += '<Style ss:ID="Planned"><Font ss:FontName="Calibri" ss:Size="11"/><Interior ss:Color="#E8E8E8" ss:Pattern="Solid"/></Style>\n';
+  xml += '<Style ss:ID="Wrap"><Alignment ss:WrapText="1" ss:Vertical="Top"/></Style>\n';
+  xml += '</Styles>\n';
+
+  xml += '<Worksheet ss:Name="RHTP Tracker">\n';
+  xml += '<Table>\n';
+
+  // Column widths
+  const widths = [120, 130, 280, 160, 200, 100, 160, 160, 320, 320, 500];
+  widths.forEach(w => { xml += `<Column ss:Width="${w}"/>\n`; });
+
+  // Header row
+  xml += '<Row ss:Height="30">\n';
+  cols.forEach(c => {
+    xml += `<Cell ss:StyleID="Header"><Data ss:Type="String">${esc(c.label)}</Data></Cell>\n`;
+  });
+  xml += '</Row>\n';
+
+  // Data rows
+  data.forEach(d => {
+    const cat = getStatusCategory(d);
+    let rowStyle = '';
+    if (cat === 'posted') rowStyle = ' ss:StyleID="Posted"';
+    else if (cat === 'imminent') rowStyle = ' ss:StyleID="Imminent"';
+    else if (cat === 'planned') rowStyle = ' ss:StyleID="Planned"';
+
+    xml += '<Row>\n';
+    cols.forEach((c, ci) => {
+      const val = d[c.key] || '';
+      const cellStyle = ci === cols.length - 1 ? ' ss:StyleID="Wrap"' : rowStyle;
+      xml += `<Cell${cellStyle}><Data ss:Type="String">${esc(val)}</Data></Cell>\n`;
+    });
+    xml += '</Row>\n';
+  });
+
+  xml += '</Table>\n';
+  xml += '</Worksheet>\n';
+  xml += '</Workbook>';
+
+  const blob = new Blob([xml], { type: 'application/vnd.ms-excel' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'RHTP_Tracker_' + new Date().toISOString().slice(0,10) + '.xls';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+fetch('rhtp_results.json')
+  .then(r => r.json())
+  .then(d => {
+    data = d;
+    renderStats();
+    applyFilters();
+  })
+  .catch(e => {
+    document.getElementById('tableBody').innerHTML = '<tr><td colspan="9" style="padding:20px;color:#999;">Error loading data. Make sure rhtp_results.json is in the same directory.</td></tr>';
+  });
+</script>
+</body>
+</html>
