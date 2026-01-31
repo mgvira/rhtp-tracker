@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RHTP Vendor/Subaward Application Tracker</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.4/css/responsive.dataTables.min.css">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -15,25 +17,25 @@
   .header {
     background: #2a2a2a;
     color: #fff;
-    padding: 28px 40px;
+    padding: 24px 32px;
     border-bottom: 3px solid #555;
   }
   .header h1 {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     letter-spacing: 0.3px;
   }
   .header p {
     font-size: 13px;
     color: #bbb;
-    margin-top: 6px;
+    margin-top: 4px;
   }
   .controls {
     background: #fff;
-    padding: 16px 40px;
+    padding: 14px 32px;
     border-bottom: 1px solid #ddd;
     display: flex;
-    gap: 16px;
+    gap: 12px;
     align-items: center;
     flex-wrap: wrap;
   }
@@ -42,28 +44,26 @@
     font-weight: 600;
     color: #555;
   }
-  .controls select, .controls input {
+  .controls select {
     padding: 6px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 13px;
     background: #fff;
   }
-  .controls input[type="text"] {
-    width: 240px;
-  }
   .stats {
     background: #fff;
-    padding: 12px 40px;
+    padding: 10px 32px;
     border-bottom: 1px solid #ddd;
     display: flex;
-    gap: 24px;
+    gap: 16px;
     flex-wrap: wrap;
+    align-items: center;
   }
   .stat-item {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     font-size: 13px;
   }
   .stat-dot {
@@ -71,6 +71,7 @@
     height: 10px;
     border-radius: 50%;
     display: inline-block;
+    flex-shrink: 0;
   }
   .dot-active { background: #333; }
   .dot-imminent { background: #666; }
@@ -81,17 +82,17 @@
     color: #333;
   }
   .table-wrap {
-    padding: 20px 40px 40px;
-    overflow-x: auto;
+    padding: 16px 32px 32px;
   }
-  table {
-    width: 100%;
+  /* DataTables overrides */
+  table.dataTable {
+    width: 100% !important;
     border-collapse: collapse;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     font-size: 13px;
   }
-  thead th {
+  table.dataTable thead th {
     background: #3a3a3a;
     color: #fff;
     padding: 10px 12px;
@@ -100,43 +101,56 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    position: sticky;
-    top: 0;
-    cursor: pointer;
-    user-select: none;
     white-space: nowrap;
+    border-bottom: none;
   }
-  thead th:hover {
+  table.dataTable thead th:hover {
     background: #4a4a4a;
   }
-  thead th .sort-arrow {
-    margin-left: 4px;
-    font-size: 10px;
-    opacity: 0.5;
+  table.dataTable thead th.dt-ordering-asc .dt-column-order::before,
+  table.dataTable thead th.dt-ordering-desc .dt-column-order::after {
+    color: #fff;
   }
-  thead th.sorted .sort-arrow {
-    opacity: 1;
-  }
-  tbody tr {
+  table.dataTable tbody tr {
     border-bottom: 1px solid #eee;
   }
-  tbody tr:hover {
-    background: #f9f9f9;
+  table.dataTable tbody tr:hover {
+    background: #f9f9f9 !important;
   }
-  tbody td {
+  table.dataTable tbody td {
     padding: 10px 12px;
     vertical-align: top;
+    border-bottom: 1px solid #eee;
+  }
+  /* Responsive child row styling */
+  table.dataTable > tbody > tr.child ul.dtr-details {
+    width: 100%;
+  }
+  table.dataTable > tbody > tr.child ul.dtr-details > li {
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+  }
+  table.dataTable > tbody > tr.child span.dtr-title {
+    font-weight: 600;
+    color: #555;
+    min-width: 100px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  table.dataTable > tbody > tr.child span.dtr-data {
+    font-size: 13px;
   }
   td.state-name {
     font-weight: 600;
     white-space: nowrap;
   }
-  td a {
+  td a, span.dtr-data a {
     color: #444;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
-  td a:hover {
+  td a:hover, span.dtr-data a:hover {
     color: #000;
   }
   .badge {
@@ -162,13 +176,6 @@
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
   }
-  .footer {
-    padding: 20px 40px;
-    font-size: 11px;
-    color: #999;
-    border-top: 1px solid #ddd;
-    background: #fff;
-  }
   .expand-btn {
     background: none;
     border: 1px solid #ccc;
@@ -181,22 +188,130 @@
   .expand-btn:hover {
     background: #eee;
   }
-  .notes-short {
-    display: inline;
+  .notes-short { display: inline; }
+  .notes-full { display: none; }
+  .notes-expanded .notes-short { display: none; }
+  .notes-expanded .notes-full { display: inline; }
+  .btn-export {
+    padding: 6px 16px;
+    background: #3a3a3a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
   }
-  .notes-full {
-    display: none;
+  .btn-export:hover { background: #4a4a4a; }
+  .footer {
+    padding: 20px 32px;
+    font-size: 11px;
+    color: #999;
+    border-top: 1px solid #ddd;
+    background: #fff;
   }
-  .notes-expanded .notes-short {
-    display: none;
+  /* Hide default DT search - we use filters row */
+  div.dt-search { display: none; }
+  /* Style DT length & info */
+  div.dt-length select {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 13px;
   }
-  .notes-expanded .notes-full {
-    display: inline;
+  div.dt-info { font-size: 12px; color: #888; }
+  div.dt-paging .dt-paging-button {
+    font-size: 12px;
   }
-  @media (max-width: 900px) {
-    .header, .controls, .stats, .table-wrap, .footer {
-      padding-left: 16px;
-      padding-right: 16px;
+
+  /* ---- Mobile-first responsive ---- */
+  @media (max-width: 768px) {
+    .header {
+      padding: 16px;
+    }
+    .header h1 {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+    .header p {
+      font-size: 11px;
+    }
+    .controls {
+      padding: 12px 16px;
+      gap: 8px;
+    }
+    .controls .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      width: 100%;
+    }
+    .controls .filter-group select {
+      flex: 1;
+    }
+    .controls .btn-export {
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+    .stats {
+      padding: 10px 16px;
+      gap: 8px;
+    }
+    .stat-item {
+      font-size: 12px;
+    }
+    .stat-total {
+      width: 100%;
+      margin-top: 2px;
+    }
+    .table-wrap {
+      padding: 12px 8px 24px;
+    }
+    table.dataTable {
+      font-size: 13px;
+    }
+    table.dataTable thead th {
+      padding: 8px 10px;
+      font-size: 11px;
+    }
+    table.dataTable tbody td {
+      padding: 8px 10px;
+    }
+    td.notes-cell {
+      max-width: none;
+    }
+    .footer {
+      padding: 16px;
+      font-size: 10px;
+    }
+    /* DT controls on mobile */
+    div.dt-layout-row {
+      flex-direction: column;
+      gap: 8px;
+      padding: 0 8px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .header {
+      padding: 12px;
+    }
+    .header h1 {
+      font-size: 15px;
+    }
+    .controls {
+      padding: 10px 12px;
+    }
+    .stats {
+      padding: 8px 12px;
+      gap: 6px;
+    }
+    .table-wrap {
+      padding: 8px 4px 20px;
+    }
+    .footer {
+      padding: 12px;
     }
   }
 </style>
@@ -206,47 +321,49 @@
 <div class="header">
   <h1>RHTP Vendor / Subaward Application Tracker</h1>
   <p>CMS Rural Health Transformation Program &mdash; Downstream State Opportunities for Vendors, Subgrantees &amp; Partners &mdash; All 50 States</p>
-  <p style="margin-top:4px;">Last updated: January 30, 2026 &nbsp;|&nbsp; Data sourced from state .gov sites, CMS, SHVS, and public records</p>
+  <p style="margin-top:4px;">Last updated: January 31, 2026 &nbsp;|&nbsp; Data sourced from state .gov sites, CMS, SHVS, and public records</p>
 </div>
 
 <div class="controls">
-  <label for="filterStatus">Filter by Status:</label>
-  <select id="filterStatus" onchange="applyFilters()">
-    <option value="all">All States</option>
-    <option value="posted">Opportunity Posted</option>
-    <option value="imminent">Imminent / Coming Soon</option>
-    <option value="planned">RFA/RFP Planned</option>
-    <option value="none">No Opportunity Yet</option>
-  </select>
-  <label for="filterVendor">Vendor Eligible:</label>
-  <select id="filterVendor" onchange="applyFilters()">
-    <option value="all">All</option>
-    <option value="yes">Yes</option>
-    <option value="tbd">TBD</option>
-  </select>
-  <label for="searchBox">Search:</label>
-  <input type="text" id="searchBox" placeholder="State, agency, notes..." oninput="applyFilters()">
-  <button id="exportBtn" onclick="exportToExcel()" style="margin-left:auto;padding:6px 16px;background:#3a3a3a;color:#fff;border:none;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;">Download Excel</button>
+  <span class="filter-group">
+    <label for="filterStatus">Status:</label>
+    <select id="filterStatus" onchange="applyCustomFilters()">
+      <option value="all">All States</option>
+      <option value="posted">Opportunity Posted</option>
+      <option value="imminent">Imminent / Coming Soon</option>
+      <option value="planned">RFA/RFP Planned</option>
+      <option value="none">No Opportunity Yet</option>
+    </select>
+  </span>
+  <span class="filter-group">
+    <label for="filterVendor">Vendor:</label>
+    <select id="filterVendor" onchange="applyCustomFilters()">
+      <option value="all">All</option>
+      <option value="yes">Eligible</option>
+      <option value="tbd">TBD</option>
+    </select>
+  </span>
+  <button class="btn-export" onclick="exportToExcel()">Download Excel</button>
 </div>
 
 <div class="stats" id="statsBar"></div>
 
 <div class="table-wrap">
-  <table id="rhtpTable">
+  <table id="rhtpTable" class="display responsive nowrap" style="width:100%">
     <thead>
       <tr>
-        <th data-col="state" onclick="sortTable('state')">State <span class="sort-arrow">&#9650;</span></th>
-        <th data-col="awardAmount" onclick="sortTable('awardAmount')">FY2026 Award <span class="sort-arrow">&#9650;</span></th>
-        <th data-col="fundingOpportunityPosted" onclick="sortTable('fundingOpportunityPosted')">Opportunity Status <span class="sort-arrow">&#9650;</span></th>
-        <th data-col="opportunityType" onclick="sortTable('opportunityType')">Type <span class="sort-arrow">&#9650;</span></th>
-        <th data-col="vendorEligible" onclick="sortTable('vendorEligible')">Vendor Eligible <span class="sort-arrow">&#9650;</span></th>
-        <th data-col="applicationOpenDate" onclick="sortTable('applicationOpenDate')">Open Date <span class="sort-arrow">&#9650;</span></th>
-        <th data-col="applicationDeadline" onclick="sortTable('applicationDeadline')">Deadline <span class="sort-arrow">&#9650;</span></th>
+        <th>State</th>
+        <th>FY2026 Award</th>
+        <th>Status</th>
+        <th>Type</th>
+        <th>Vendor</th>
+        <th>Open Date</th>
+        <th>Deadline</th>
         <th>Links</th>
         <th>Notes</th>
       </tr>
     </thead>
-    <tbody id="tableBody"></tbody>
+    <tbody></tbody>
   </table>
 </div>
 
@@ -254,14 +371,17 @@
   <p><strong>Disclaimer:</strong> This tracker covers DOWNSTREAM state-level opportunities only (vendor/subaward/subgrant applications issued by states).
   The state-to-CMS application process is complete. All 50 states received awards on December 29, 2025.
   Most states are currently finalizing cooperative agreements with CMS and developing their RFA/RFP processes.
-  Data is based on publicly available information as of January 30, 2026 and may not reflect real-time updates.
+  Data is based on publicly available information as of January 31, 2026 and may not reflect real-time updates.
   Always verify directly with state program pages.</p>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/3.0.4/js/dataTables.responsive.min.js"></script>
 <script>
 let data = [];
-let sortCol = 'state';
-let sortAsc = true;
+let dt = null;
+let noteIndex = 0;
 
 function getStatusCategory(item) {
   const f = item.fundingOpportunityPosted.toLowerCase();
@@ -280,8 +400,7 @@ function getBadgeClass(item) {
 }
 
 function getVendorBadge(v) {
-  if (v === 'Yes') return 'badge-yes';
-  return 'badge-tbd';
+  return v === 'Yes' ? 'badge-yes' : 'badge-tbd';
 }
 
 function truncate(str, len) {
@@ -295,104 +414,55 @@ function parseAward(s) {
   return parseInt(s.replace(/[^0-9]/g, '')) || 0;
 }
 
-function renderStats() {
-  const counts = { posted: 0, imminent: 0, planned: 0, none: 0 };
-  data.forEach(d => counts[getStatusCategory(d)]++);
-  document.getElementById('statsBar').innerHTML = `
-    <div class="stat-item"><span class="stat-dot dot-active"></span> <span class="stat-count">${counts.posted}</span> Opportunity Posted</div>
-    <div class="stat-item"><span class="stat-dot dot-imminent"></span> <span class="stat-count">${counts.imminent}</span> Imminent / Coming Soon</div>
-    <div class="stat-item"><span class="stat-dot dot-planned"></span> <span class="stat-count">${counts.planned}</span> RFA/RFP Planned or In Dev</div>
-    <div class="stat-item"><span class="stat-dot dot-none"></span> <span class="stat-count">${counts.none}</span> No Opportunity Yet</div>
-    <div class="stat-item" style="margin-left:auto;color:#888;">Total: <span class="stat-count">50</span> states &nbsp;|&nbsp; $10B FY2026</div>
-  `;
+function renderLinks(d) {
+  const links = [];
+  if (d.programPageUrl && d.programPageUrl.startsWith('http'))
+    links.push('<a href="' + d.programPageUrl + '" target="_blank">Program Page</a>');
+  else if (d.programPageUrl)
+    links.push('<span style="color:#999">' + d.programPageUrl + '</span>');
+  if (d.applicationLink)
+    links.push('<a href="' + d.applicationLink + '" target="_blank">Apply</a>');
+  return links.join('<br>') || '—';
 }
 
-function renderTable(items) {
-  const tbody = document.getElementById('tableBody');
-  tbody.innerHTML = items.map((d, i) => {
-    const links = [];
-    if (d.programPageUrl && d.programPageUrl.startsWith('http')) links.push(`<a href="${d.programPageUrl}" target="_blank">Program Page</a>`);
-    else if (d.programPageUrl) links.push(`<span style="color:#999">${d.programPageUrl}</span>`);
-    if (d.applicationLink) links.push(`<a href="${d.applicationLink}" target="_blank">Apply</a>`);
-    const shortNote = truncate(d.notes, 120);
-    const hasMore = d.notes && d.notes.length > 120;
-    return `<tr>
-      <td class="state-name">${d.state}</td>
-      <td class="award-cell">${d.awardAmount || 'N/A'}</td>
-      <td><span class="badge ${getBadgeClass(d)}">${d.fundingOpportunityPosted}</span></td>
-      <td>${d.opportunityType || 'N/A'}</td>
-      <td><span class="badge ${getVendorBadge(d.vendorEligible)}">${d.vendorEligible}</span></td>
-      <td>${d.applicationOpenDate || '—'}</td>
-      <td>${d.applicationDeadline || '—'}</td>
-      <td style="white-space:nowrap">${links.join('<br>') || '—'}</td>
-      <td class="notes-cell" id="notes-${i}">
-        <span class="notes-short">${shortNote}</span>
-        ${hasMore ? `<span class="notes-full">${d.notes}</span> <button class="expand-btn" onclick="toggleNotes(${i})">${hasMore ? 'more' : ''}</button>` : ''}
-      </td>
-    </tr>`;
-  }).join('');
+function renderNotes(notes) {
+  if (!notes) return '';
+  const idx = noteIndex++;
+  const short = truncate(notes, 120);
+  const hasMore = notes.length > 120;
+  if (!hasMore) return '<span class="notes-short">' + short + '</span>';
+  return '<span id="notes-' + idx + '">'
+    + '<span class="notes-short">' + short + '</span>'
+    + '<span class="notes-full">' + notes + '</span>'
+    + ' <button class="expand-btn" onclick="toggleNotes(' + idx + ')">more</button>'
+    + '</span>';
 }
 
 function toggleNotes(i) {
-  const el = document.getElementById('notes-' + i);
-  const btn = el.querySelector('.expand-btn');
+  var el = document.getElementById('notes-' + i);
+  if (!el) return;
+  var btn = el.querySelector('.expand-btn');
   el.classList.toggle('notes-expanded');
   btn.textContent = el.classList.contains('notes-expanded') ? 'less' : 'more';
 }
 
-function sortTable(col) {
-  if (sortCol === col) {
-    sortAsc = !sortAsc;
-  } else {
-    sortCol = col;
-    sortAsc = true;
-  }
-  document.querySelectorAll('thead th').forEach(th => {
-    th.classList.remove('sorted');
-    if (th.dataset.col === col) th.classList.add('sorted');
-  });
-  applyFilters();
+function renderStats() {
+  const counts = { posted: 0, imminent: 0, planned: 0, none: 0 };
+  data.forEach(d => counts[getStatusCategory(d)]++);
+  document.getElementById('statsBar').innerHTML =
+    '<div class="stat-item"><span class="stat-dot dot-active"></span> <span class="stat-count">' + counts.posted + '</span> Posted</div>'
+    + '<div class="stat-item"><span class="stat-dot dot-imminent"></span> <span class="stat-count">' + counts.imminent + '</span> Imminent</div>'
+    + '<div class="stat-item"><span class="stat-dot dot-planned"></span> <span class="stat-count">' + counts.planned + '</span> Planned</div>'
+    + '<div class="stat-item"><span class="stat-dot dot-none"></span> <span class="stat-count">' + counts.none + '</span> None Yet</div>'
+    + '<div class="stat-item stat-total" style="margin-left:auto;color:#888;">Total: <span class="stat-count">50</span> states</div>';
 }
 
-function applyFilters() {
-  const statusFilter = document.getElementById('filterStatus').value;
-  const vendorFilter = document.getElementById('filterVendor').value;
-  const search = document.getElementById('searchBox').value.toLowerCase();
-
-  let filtered = data.filter(d => {
-    if (statusFilter !== 'all' && getStatusCategory(d) !== statusFilter) return false;
-    if (vendorFilter === 'yes' && d.vendorEligible !== 'Yes') return false;
-    if (vendorFilter === 'tbd' && d.vendorEligible !== 'TBD') return false;
-    if (search) {
-      const haystack = (d.state + ' ' + d.leadAgency + ' ' + d.notes + ' ' + d.opportunityType + ' ' + d.awardAmount).toLowerCase();
-      if (!haystack.includes(search)) return false;
-    }
-    return true;
-  });
-
-  filtered.sort((a, b) => {
-    let va, vb;
-    if (sortCol === 'awardAmount') {
-      va = parseAward(a.awardAmount);
-      vb = parseAward(b.awardAmount);
-    } else if (sortCol === 'fundingOpportunityPosted') {
-      const order = { posted: 0, imminent: 1, planned: 2, none: 3 };
-      va = order[getStatusCategory(a)] ?? 4;
-      vb = order[getStatusCategory(b)] ?? 4;
-    } else {
-      va = (a[sortCol] || '').toLowerCase();
-      vb = (b[sortCol] || '').toLowerCase();
-    }
-    if (va < vb) return sortAsc ? -1 : 1;
-    if (va > vb) return sortAsc ? 1 : -1;
-    return 0;
-  });
-
-  renderTable(filtered);
+function applyCustomFilters() {
+  if (!dt) return;
+  dt.draw();
 }
 
 function exportToExcel() {
-  // Build XML Spreadsheet (opens natively in Excel, Numbers, LibreOffice)
   const cols = [
     { key: 'state', label: 'State' },
     { key: 'awardAmount', label: 'FY2026 Award' },
@@ -406,18 +476,12 @@ function exportToExcel() {
     { key: 'applicationLink', label: 'Application Link' },
     { key: 'notes', label: 'Notes' }
   ];
-
   const esc = s => {
     if (!s) return '';
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   };
-
-  let xml = '<?xml version="1.0"?>\n';
-  xml += '<?mso-application progid="Excel.Sheet"?>\n';
-  xml += '<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"\n';
-  xml += ' xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">\n';
-
-  // Styles
+  let xml = '<?xml version="1.0"?>\n<?mso-application progid="Excel.Sheet"?>\n';
+  xml += '<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">\n';
   xml += '<Styles>\n';
   xml += '<Style ss:ID="Default"><Font ss:FontName="Calibri" ss:Size="11"/></Style>\n';
   xml += '<Style ss:ID="Header"><Font ss:FontName="Calibri" ss:Size="11" ss:Bold="1" ss:Color="#FFFFFF"/><Interior ss:Color="#3A3A3A" ss:Pattern="Solid"/><Alignment ss:Horizontal="Center" ss:WrapText="1"/></Style>\n';
@@ -426,42 +490,26 @@ function exportToExcel() {
   xml += '<Style ss:ID="Planned"><Font ss:FontName="Calibri" ss:Size="11"/><Interior ss:Color="#E8E8E8" ss:Pattern="Solid"/></Style>\n';
   xml += '<Style ss:ID="Wrap"><Alignment ss:WrapText="1" ss:Vertical="Top"/></Style>\n';
   xml += '</Styles>\n';
-
-  xml += '<Worksheet ss:Name="RHTP Tracker">\n';
-  xml += '<Table>\n';
-
-  // Column widths
-  const widths = [120, 130, 280, 160, 200, 100, 160, 160, 320, 320, 500];
-  widths.forEach(w => { xml += `<Column ss:Width="${w}"/>\n`; });
-
-  // Header row
+  xml += '<Worksheet ss:Name="RHTP Tracker"><Table>\n';
+  [120,130,280,160,200,100,160,160,320,320,500].forEach(w => { xml += '<Column ss:Width="' + w + '"/>\n'; });
   xml += '<Row ss:Height="30">\n';
-  cols.forEach(c => {
-    xml += `<Cell ss:StyleID="Header"><Data ss:Type="String">${esc(c.label)}</Data></Cell>\n`;
-  });
+  cols.forEach(c => { xml += '<Cell ss:StyleID="Header"><Data ss:Type="String">' + esc(c.label) + '</Data></Cell>\n'; });
   xml += '</Row>\n';
-
-  // Data rows
   data.forEach(d => {
     const cat = getStatusCategory(d);
-    let rowStyle = '';
-    if (cat === 'posted') rowStyle = ' ss:StyleID="Posted"';
-    else if (cat === 'imminent') rowStyle = ' ss:StyleID="Imminent"';
-    else if (cat === 'planned') rowStyle = ' ss:StyleID="Planned"';
-
+    let rs = '';
+    if (cat === 'posted') rs = ' ss:StyleID="Posted"';
+    else if (cat === 'imminent') rs = ' ss:StyleID="Imminent"';
+    else if (cat === 'planned') rs = ' ss:StyleID="Planned"';
     xml += '<Row>\n';
     cols.forEach((c, ci) => {
       const val = d[c.key] || '';
-      const cellStyle = ci === cols.length - 1 ? ' ss:StyleID="Wrap"' : rowStyle;
-      xml += `<Cell${cellStyle}><Data ss:Type="String">${esc(val)}</Data></Cell>\n`;
+      const cs = ci === cols.length - 1 ? ' ss:StyleID="Wrap"' : rs;
+      xml += '<Cell' + cs + '><Data ss:Type="String">' + esc(val) + '</Data></Cell>\n';
     });
     xml += '</Row>\n';
   });
-
-  xml += '</Table>\n';
-  xml += '</Worksheet>\n';
-  xml += '</Workbook>';
-
+  xml += '</Table></Worksheet></Workbook>';
   const blob = new Blob([xml], { type: 'application/vnd.ms-excel' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -478,10 +526,86 @@ fetch('rhtp_results.json')
   .then(d => {
     data = d;
     renderStats();
-    applyFilters();
+    noteIndex = 0;
+
+    // Build DataTables rows
+    const rows = data.map(item => [
+      item.state,
+      item.awardAmount || 'N/A',
+      '<span class="badge ' + getBadgeClass(item) + '">' + item.fundingOpportunityPosted + '</span>',
+      item.opportunityType || 'N/A',
+      '<span class="badge ' + getVendorBadge(item.vendorEligible) + '">' + item.vendorEligible + '</span>',
+      item.applicationOpenDate || '—',
+      item.applicationDeadline || '—',
+      renderLinks(item),
+      renderNotes(item.notes),
+      // Hidden columns for filtering/sorting
+      getStatusCategory(item),
+      item.vendorEligible
+    ]);
+
+    dt = $('#rhtpTable').DataTable({
+      data: rows,
+      responsive: {
+        details: {
+          type: 'column',
+          target: 'tr'
+        }
+      },
+      columns: [
+        { title: 'State', className: 'state-name', responsivePriority: 1 },
+        { title: 'FY2026 Award', className: 'award-cell', responsivePriority: 3 },
+        { title: 'Status', responsivePriority: 2 },
+        { title: 'Type', responsivePriority: 5 },
+        { title: 'Vendor', responsivePriority: 4 },
+        { title: 'Open Date', responsivePriority: 6 },
+        { title: 'Deadline', responsivePriority: 7 },
+        { title: 'Links', responsivePriority: 8, orderable: false },
+        { title: 'Notes', className: 'notes-cell', responsivePriority: 9, orderable: false },
+        { visible: false }, // status category
+        { visible: false }  // vendor raw
+      ],
+      order: [[0, 'asc']],
+      pageLength: 50,
+      lengthMenu: [[25, 50, -1], [25, 50, 'All']],
+      language: {
+        search: 'Search:',
+        lengthMenu: 'Show _MENU_',
+        info: 'Showing _START_ to _END_ of _TOTAL_ states',
+        infoFiltered: '(filtered from _MAX_ total)',
+        zeroRecords: 'No matching states found'
+      },
+      columnDefs: [
+        {
+          targets: 1,
+          type: 'num',
+          render: {
+            sort: function(data) {
+              return parseInt(String(data).replace(/[^0-9]/g, '')) || 0;
+            }
+          }
+        }
+      ]
+    });
+
+    // Custom filter plugin for status & vendor dropdowns
+    $.fn.dataTable.ext.search.push(function(settings, searchData, index, rowData) {
+      var statusFilter = document.getElementById('filterStatus').value;
+      var vendorFilter = document.getElementById('filterVendor').value;
+      var cat = rowData[9];  // hidden status category column
+      var vendor = rowData[10]; // hidden vendor column
+
+      if (statusFilter !== 'all' && cat !== statusFilter) return false;
+      if (vendorFilter === 'yes' && vendor !== 'Yes') return false;
+      if (vendorFilter === 'tbd' && vendor !== 'TBD') return false;
+      return true;
+    });
+
+    dt.draw();
   })
   .catch(e => {
-    document.getElementById('tableBody').innerHTML = '<tr><td colspan="9" style="padding:20px;color:#999;">Error loading data. Make sure rhtp_results.json is in the same directory.</td></tr>';
+    document.getElementById('rhtpTable').querySelector('tbody').innerHTML =
+      '<tr><td colspan="9" style="padding:20px;color:#999;">Error loading data. Make sure rhtp_results.json is in the same directory.</td></tr>';
   });
 </script>
 </body>
