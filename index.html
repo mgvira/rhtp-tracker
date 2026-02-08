@@ -228,8 +228,8 @@
   }
   .notes-short { display: inline; }
   .notes-full { display: none; }
-  .notes-expanded .notes-short { display: none; }
-  .notes-expanded .notes-full { display: inline; }
+  .notes-wrap.notes-expanded .notes-short { display: none; }
+  .notes-wrap.notes-expanded .notes-full { display: inline; }
   .btn-export {
     padding: 6px 16px;
     background: #3a3a3a;
@@ -603,7 +603,6 @@ const JSONBIN_KEY = '$2a$10$6JX6ofTJtikmxiWlTay2ueAXQfloPs2sYFkz3PjHoZ004FiZnoHA
 
 let data = [];
 let dt = null;
-let noteIndex = 0;
 
 function getStatusCategory(item) {
   const f = item.fundingOpportunityPosted.toLowerCase();
@@ -647,21 +646,19 @@ function renderLinks(d) {
 
 function renderNotes(notes) {
   if (!notes) return '';
-  const idx = noteIndex++;
   const short = truncate(notes, 120);
   const hasMore = notes.length > 120;
   if (!hasMore) return '<span class="notes-short">' + short + '</span>';
-  return '<span id="notes-' + idx + '">'
+  return '<span class="notes-wrap">'
     + '<span class="notes-short">' + short + '</span>'
     + '<span class="notes-full">' + notes + '</span>'
-    + ' <button class="expand-btn" onclick="toggleNotes(' + idx + ')">more</button>'
+    + ' <button class="expand-btn" onclick="toggleNotes(this)">more</button>'
     + '</span>';
 }
 
-function toggleNotes(i) {
-  var el = document.getElementById('notes-' + i);
+function toggleNotes(btn) {
+  var el = btn.parentElement;
   if (!el) return;
-  var btn = el.querySelector('.expand-btn');
   el.classList.toggle('notes-expanded');
   btn.textContent = el.classList.contains('notes-expanded') ? 'less' : 'more';
 }
@@ -808,7 +805,6 @@ function saveEdit() {
   item.lastUpdated = new Date().toISOString().slice(0, 10);
 
   // Rebuild the row data for this item
-  noteIndex = 0; // reset for renderNotes
   var newRow = [
     item.state,
     item.awardAmount || 'N/A',
@@ -872,8 +868,6 @@ fetch('https://api.jsonbin.io/v3/b/' + JSONBIN_ID + '/latest', {
     data = d;
     renderStats();
     renderGlobalDate();
-    noteIndex = 0;
-
     // Build DataTables rows
     const rows = data.map((item, i) => [
       item.state,
