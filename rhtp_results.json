@@ -397,7 +397,7 @@
   },
   {
     "state": "Minnesota",
-    "programPageUrl": "https://www.health.mn.gov/facilities/ruralhealth/ruraltrans.html",
+    "programPageUrl": "https://www.health.state.mn.us/facilities/ruralhealth/ruraltrans/index.html",
     "fundingOpportunityPosted": "No",
     "opportunityType": "N/A",
     "vendorEligible": "TBD",
@@ -406,12 +406,12 @@
     "applicationLink": "",
     "awardAmount": "$193,090,618",
     "leadAgency": "Minnesota Department of Health",
-    "notes": "Minnesota received $193.1M for FY2026. No downstream RFA, RFP, or subgrant application has been posted yet.",
+    "notes": "Minnesota received $193.1M for FY2026. Grants page: health.state.mn.us/facilities/ruralhealth/ruraltrans/grants.html. No downstream RFA, RFP, or subgrant application has been posted yet.",
     "cmsApplicationUrl": "https://www.health.mn.gov/facilities/ruralhealth/ruraltrans/docs/rhtpnarrative.pdf",
     "rhtpEmail": "rural.transformation.mdh@state.mn.us",
     "programName": "Minnesota Rural Health Transformation Program",
     "programAddress": "Minnesota Department of Health, Office of Rural Health and Primary Care, P.O. Box 64975, St. Paul, MN 55164-0975",
-    "lastUpdated": "2026-01-31"
+    "lastUpdated": "2026-02-07"
   },
   {
     "state": "Mississippi",
@@ -613,7 +613,7 @@
   },
   {
     "state": "Ohio",
-    "programPageUrl": "https://odh.ohio.gov/know-our-programs/rural-health-transformation-program",
+    "programPageUrl": "",
     "fundingOpportunityPosted": "Yes",
     "opportunityType": "RFP (active)",
     "vendorEligible": "Yes",
@@ -622,12 +622,12 @@
     "applicationLink": "",
     "awardAmount": "$202,030,262",
     "leadAgency": "Ohio Department of Health",
-    "notes": "Ohio received $202.0M for FY2026. ACTIVE VENDOR RFP: 'Rural Health Workforce Pipeline; Pathways Upskilling and Retention' (SRC0000036107). Posted Jan 2, 2026, deadline March 10, 2026. Estimated $5M-$15M annually, up to $60M total contract value. Contract period: April 1, 2026 - June 30, 2027 with renewals through June 30, 2031. Scope: statewide workforce pipeline strategy across high schools, career tech, community colleges, universities, and employers in 73 rural counties. Includes apprenticeships, CHW training, recruitment incentives, 6-month housing stipends for 5-year rural service commitments. One award anticipated. Five initiative pillars: Rural Health Innovation Hubs, Emergency Care Transformation, School-Based Health Centers, OH SEE Expansion, Rural Workforce Pipeline. Additional RFPs for other pillars expected. Note: original ODH program page URL may have changed.",
+    "notes": "Ohio received $202.0M for FY2026. ACTIVE VENDOR RFP: 'Rural Health Workforce Pipeline; Pathways Upskilling and Retention' (SRC0000036107). Posted Jan 2, 2026, deadline March 10, 2026. Estimated $5M-$15M annually, up to $60M total contract value. Contract period: April 1, 2026 - June 30, 2027 with renewals through June 30, 2031. Scope: statewide workforce pipeline strategy across high schools, career tech, community colleges, universities, and employers in 73 rural counties. Includes apprenticeships, CHW training, recruitment incentives, 6-month housing stipends for 5-year rural service commitments. One award anticipated. Five initiative pillars: Rural Health Innovation Hubs, Emergency Care Transformation, School-Based Health Centers, OH SEE Expansion, Rural Workforce Pipeline. Additional RFPs for other pillars expected. No dedicated RHTP program page found on ODH website (old URL returned 404, site appears restructured).",
     "cmsApplicationUrl": "https://odh.ohio.gov/wps/wcm/connect/gov/8bdd742f-890a-42db-a390-a7d15a39dcdc/Ohio%2BRHT%2BPROGRAM%2BNARRATIVE.pdf?MOD=AJPERES&CONVERT_TO=url&CACHEID=ROOTWORKSPACE.Z18_K9I401S01H7F40QBNJU3SO1F56-8bdd742f-890a-42db-a390-a7d15a39dcdc-pFuxMR0",
     "rhtpEmail": "",
     "programName": "Ohio Rural Health Transformation Program",
     "programAddress": "Ohio Department of Health, 246 N. High Street, Columbus, OH 43215",
-    "lastUpdated": "2026-02-04"
+    "lastUpdated": "2026-02-07"
   },
   {
     "state": "Oklahoma",
@@ -811,7 +811,7 @@
   },
   {
     "state": "Virginia",
-    "programPageUrl": "https://www.hhr.virginia.gov/initiatives/rural-health/",
+    "programPageUrl": "https://dmas.virginia.gov/data-reporting/programs-services/rural-health-transformation/",
     "fundingOpportunityPosted": "No",
     "opportunityType": "N/A",
     "vendorEligible": "TBD",
@@ -820,12 +820,12 @@
     "applicationLink": "",
     "awardAmount": "$189,544,888",
     "leadAgency": "Virginia Department of Medical Assistance Services (DMAS)",
-    "notes": "Virginia received $189.5M for FY2026 under 'VA Rural Vitality' initiative. DMAS aims to hire core team staff in early 2026. Implementation support contractors will help launch 'ready-to-launch programs' first. Four initiatives: CareIQ, Homegrown Health Heroes, Connected Care Closer to Home, Live Well Together. Virginia Center for Health Innovation (VCHI) leading independent evaluation. Note: original program page at hhr.virginia.gov may return 404 - check DMAS website. Monitor: DMAS procurement and Virginia Business Opportunities (eVA) portal.",
+    "notes": "Virginia received $189.5M for FY2026 under 'VA Rural Vitality' initiative. DMAS aims to hire core team staff in early 2026. Implementation support contractors will help launch 'ready-to-launch programs' first. Four initiatives: CareIQ, Homegrown Health Heroes, Connected Care Closer to Home, Live Well Together. Virginia Center for Health Innovation (VCHI) leading independent evaluation. Monitor: DMAS procurement and Virginia Business Opportunities (eVA) portal.",
     "cmsApplicationUrl": "https://www.hhr.virginia.gov/media/governorvirginiagov/secretary-of-health-and-human-resources/pdf/RHC-Transformation-Project-Narrative.pdf",
     "rhtpEmail": "",
     "programName": "VA Rural Vitality",
     "programAddress": "Department of Medical Assistance Services, 600 East Broad Street, Suite 1300, Richmond, VA 23219",
-    "lastUpdated": "2026-02-04"
+    "lastUpdated": "2026-02-07"
   },
   {
     "state": "Washington",
