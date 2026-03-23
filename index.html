@@ -393,10 +393,28 @@
 
   .upcoming-item {
     padding: 12px 20px;
+    padding-right: 36px;
     border-bottom: 1px solid #f0f0f0;
     transition: background 0.15s;
+    position: relative;
   }
   .upcoming-item:hover { background: #f9f9f9; }
+  .upcoming-item-delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #e53e3e;
+    cursor: pointer;
+    font-size: 13px;
+    padding: 3px 5px;
+    border-radius: 3px;
+    line-height: 1;
+    opacity: 0.4;
+    transition: opacity 0.15s;
+  }
+  .upcoming-item-delete:hover { opacity: 1; background: #fee; }
   .upcoming-item-date {
     font-size: 11px;
     font-weight: 700;
@@ -965,13 +983,42 @@ function renderUpcomingItems() {
     body.innerHTML = '<div class="upcoming-empty">No upcoming items with dates found.</div>';
     return;
   }
-  body.innerHTML = top.map(function(item) {
+  body.innerHTML = top.map(function(item, idx) {
     return '<div class="upcoming-item">'
+      + '<button class="upcoming-item-delete" onclick="deleteUpcomingItem(' + idx + ')" title="Remove"><i class="ri-delete-bin-line"></i></button>'
       + '<div class="upcoming-item-date">' + formatStepDate(item.date) + '</div>'
       + '<div class="upcoming-item-state">' + escHtml(item.state) + '</div>'
       + '<div class="upcoming-item-label">' + escHtml(item.label) + '</div>'
       + '</div>';
   }).join('');
+  window._upcomingItems = top;
+}
+
+function deleteUpcomingItem(idx) {
+  var item = window._upcomingItems[idx];
+  if (!item) return;
+  var stateObj = data.find(function(d) { return d.state === item.state; });
+  if (!stateObj || !stateObj.nextSteps) return;
+  stateObj.nextSteps = stateObj.nextSteps.filter(function(s) {
+    return !(s.date === item.date && s.label === item.label);
+  });
+  renderUpcomingItems();
+  // Save to Firebase
+  function doSave(user) {
+    user.getIdToken().then(function(token) {
+      return fetch(FIREBASE_URL + '.json?auth=' + token, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+    });
+  }
+  if (fbAuth.currentUser) {
+    doSave(fbAuth.currentUser);
+  } else {
+    fbAuth.signInWithEmailAndPassword('mg@mgfwd.com', 'minder03')
+      .then(function(cred) { doSave(cred.user); });
+  }
 }
 
 function renderStats() {
