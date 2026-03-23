@@ -411,9 +411,10 @@
     line-height: 1.4;
   }
   .upcoming-item-state {
-    font-size: 11px;
-    color: #888;
-    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 1px;
   }
   .upcoming-empty {
     padding: 40px 20px;
@@ -953,8 +954,8 @@ function renderUpcomingItems() {
   body.innerHTML = top.map(function(item) {
     return '<div class="upcoming-item">'
       + '<div class="upcoming-item-date">' + formatStepDate(item.date) + '</div>'
-      + '<div class="upcoming-item-label">' + escHtml(item.label) + '</div>'
       + '<div class="upcoming-item-state">' + escHtml(item.state) + '</div>'
+      + '<div class="upcoming-item-label">' + escHtml(item.label) + '</div>'
       + '</div>';
   }).join('');
 }
