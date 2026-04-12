@@ -54,14 +54,6 @@
     "fundingOpportunityPosted": "Forthcoming - April/May 2026 (imminent)",
     "lastUpdated": "2026-04-01",
     "leadAgency": "Arizona Center for Rural Health / AHCCCS / ADHS",
-    "notes": "Arizona received $167.0M for FY2026. CMS approved revised narrative/budget. Governor Hobbs launched official RHTP website at azahcccs.gov. Grant NOFOs/RFPs to be posted starting April 2026, all posted by May 2026, awards targeted for Summer 2026. Multi-tier grants starting at $10K. All Year 1 funds to be committed by Oct 30, 2026. Funding mechanisms include Requests for Grant Applications (RGAs), Cooperative Agreements, Intergovernmental Agreements (IGAs) with Tribal governments, Contract Amendments, and Multi-Tier Grants. Four priority areas with revised allocations: Rural Health Education & Training (28%, Office of Economic Opportunity), Priority Health Initiative Grants including Behavioral Health (16%, AHCCCS/ADHS), Making Rural Health Care Accessible (23%, AHCCCS), Making Rural Health Resilient for Medical Equipment & Technology (23%, AHCCCS). Arizona Center for Rural Health offers letters of support via online form. HB 2233 requires AHCCCS annual JLBC reporting. RHTP Steering Committee being established by Governor. Contact: communications@azahcccs.gov.",
-    "opportunityType": "RGA/Cooperative Agreement/IGA",
-    "programAddress": "Arizona Center for Rural Health, 1295 N. Martin Ave., P.O. Box 245163, Tucson, AZ 85724",
-    "programName": "Arizona Rural Health Transformation Program",
-    "programPageUrl": "https://www.azahcccs.gov/AHCCCS/Initiatives/RHTP/",
-    "rhtpEmail": "communications@azahcccs.gov",
-    "state": "Arizona",
-    "vendorEligible": "Yes",
     "nextSteps": [
       {
         "date": "2026-04-30",
@@ -75,7 +67,15 @@
         "date": "2026-08-31",
         "label": "Grant applications reviewed and awarded (August 2026)"
       }
-    ]
+    ],
+    "notes": "Arizona received $167.0M for FY2026. CMS approved revised narrative/budget. Governor Hobbs launched official RHTP website at azahcccs.gov. Grant NOFOs/RFPs to be posted starting April 2026, all posted by May 2026, awards targeted for Summer 2026. Multi-tier grants starting at $10K. All Year 1 funds to be committed by Oct 30, 2026. Funding mechanisms include Requests for Grant Applications (RGAs), Cooperative Agreements, Intergovernmental Agreements (IGAs) with Tribal governments, Contract Amendments, and Multi-Tier Grants. Four priority areas with revised allocations: Rural Health Education & Training (28%, Office of Economic Opportunity), Priority Health Initiative Grants including Behavioral Health (16%, AHCCCS/ADHS), Making Rural Health Care Accessible (23%, AHCCCS), Making Rural Health Resilient for Medical Equipment & Technology (23%, AHCCCS). Arizona Center for Rural Health offers letters of support via online form. HB 2233 requires AHCCCS annual JLBC reporting. RHTP Steering Committee being established by Governor. Contact: communications@azahcccs.gov.",
+    "opportunityType": "RGA/Cooperative Agreement/IGA",
+    "programAddress": "Arizona Center for Rural Health, 1295 N. Martin Ave., P.O. Box 245163, Tucson, AZ 85724",
+    "programName": "Arizona Rural Health Transformation Program",
+    "programPageUrl": "https://www.azahcccs.gov/AHCCCS/Initiatives/RHTP/",
+    "rhtpEmail": "communications@azahcccs.gov",
+    "state": "Arizona",
+    "vendorEligible": "Yes"
   },
   {
     "applicationDeadline": "",
@@ -177,8 +177,8 @@
     "nextSteps": [
       {
         "date": "2026-04-15",
-        "label": "Rural Library-Based Health Access RFP deadline (Bid 8997)",
-        "isShown": false
+        "isShown": false,
+        "label": "Rural Library-Based Health Access RFP deadline (Bid 8997)"
       },
       {
         "date": "2026-04-16",
@@ -186,8 +186,8 @@
       },
       {
         "date": "2026-04-17",
-        "label": "Rural Community Health Hubs RFP deadline (Bid 8989)",
-        "isShown": false
+        "isShown": false,
+        "label": "Rural Community Health Hubs RFP deadline (Bid 8989)"
       }
     ],
     "notes": "Delaware received $157.4M for FY2026. SIX RFPs NOW OPEN on Delaware's procurement portal (mmp.delaware.gov). Active RFPs posted Feb 6, 2026: (1) Medical School Branch Campus (HSS26062-MEDSCHPSHP \u2014 Bid 8988) - $42.5M, deadline March 27, 2026; (2) Food Is Medicine Infrastructure Initiative (HSS26060-FIMII \u2014 Bid 8980) - $1.65M, deadline April 10, 2026; (3) Rural Community Health Hubs (HSS26062-RURALCHHUB \u2014 Bid 8989) - $5.48M, deadline April 17, 2026; (4) School-Based Health Centers Expansion Initiative (HSS26064-SBHCEI \u2014 Bid 8990) - $195K, deadline April 10, 2026; (5) Healthy Living in Rural Delaware / Continuous Glucose Monitoring Program (HSS26063-HLIRDDWP \u2014 Bid 8996) - $950K, deadline April 16, 2026; (6) Rural Library-Based Health Access (HSS26065-RLIBBASHLT \u2014 Bid 8997) - $1.84M, deadline April 15, 2026. Additional RFPs expected on a rolling basis in spring 2026 for: Hope Centers ($26.4M), Telehealth & RPM ($5M), Workforce Data Technology ($2.7M), Value-Based Care Transformation ($24.3M), Prior Authorization Network ($6.4M), and others. Contact: ricky.williamson@delaware.gov or dhssinfo@delaware.gov.",
@@ -591,13 +591,13 @@
       },
       {
         "date": "2026-04-20",
-        "label": "Technical assistance requests due",
-        "isShown": false
+        "isShown": false,
+        "label": "Technical assistance requests due"
       },
       {
         "date": "2026-05-15",
-        "label": "Final application deadline (rolling - apply early)",
-        "isShown": false
+        "isShown": false,
+        "label": "Final application deadline (rolling - apply early)"
       }
     ],
     "notes": "Minnesota received $193.1M for FY2026. Grant opportunities NOW OPEN for rural hospitals (70% of award), rural FQHCs (5%), rural CCBHCs/CMHCs (2%), and rural Tribal Nations (2%). These are formula-based, non-competitive grants - eligible organizations should apply early. Rolling applications with final deadline May 15, 2026. Eligible applicants: 94 rural hospitals, 5 rural FQHCs, 16 rural CCBHCs/CMHCs, 10 rural Tribal Nations. Upcoming informational webinars: Rural Hospitals - March 31, 2026 10-11 AM; Rural FQHCs - March 31, 2026 1-2 PM; Rural CCBHCs/CMHCs - April 1, 2026 1-2 PM; Tribal Nations - April 6, 2026 2-3 PM. Technical assistance requests due by April 20, 2026. MDH also issued HIT Advisory Services RFP (consultant to assist up to 150 provider orgs/year with health IT adoption) - contract term April 1, 2026 - March 31, 2028, with 3-year extension. FAQ: health.state.mn.us/facilities/ruralhealth/ruraltrans/docs/rhtpfaq.pdf. Contact: rural.transformation.mdh@state.mn.us or 651-201-3838. CORRECTION: Hospital grant applications due May 15, 2026 at 4:30 PM CT (not April 30). TA requests and questions due April 20, 2026. Grant agreements expected to start June 2026 through Oct 30, 2030. Hospital grants contact: hospitals.ruraltransformation.mdh@state.mn.us. Webinars held March 31.",
@@ -636,14 +636,6 @@
     "fundingOpportunityPosted": "No - RFA/RFP Planned",
     "lastUpdated": "2026-04-01",
     "leadAgency": "Missouri Department of Social Services",
-    "notes": "Missouri received $216.3M for FY2026 (9th largest, top-ten ranked application nationally). Branded as 'ToRCH Care' (Transformation of Rural Community Health Care). Program envisions 7 regional coordinating networks and up to 30 community hubs (2-5 counties each). Hub Boundary Map feedback survey now open on program page. Per KCUR reporting, six pilot hub hospitals already operational using Medicaid waivers and Unite Us referral platform for social care coordination. Missouri still negotiating cooperative agreement terms with CMS \u2014 federal sign-off required before any sub-awards, hub activations, or tech procurement can proceed. First funding period runs Dec 29, 2026 to Oct 30, 2027. Plans to hire 100+ people (90 for hubs, 20-25 for regional networks). Plans for 10 hospital infrastructure grants and 3 new service grants (oncology/obstetric surgery) in 2026. Largest budget item: 'digital backbone' for data sharing ($364M over 5 years). Social Care Referral Platform / Community Information Exchange RFP coming Q3 2026. Ambient AI RFI (Q1 2026 target) appears overdue \u2014 not found on any procurement portal. NOTE: Revised budget proposal sent to CMS but cooperative agreement not yet finalized; all procurements blocked until federal approval received. Five-year benchmarks: 10% reduction in ER visits, 10% reduction in uncontrolled hypertension, 5% reduction in low birth weight, 5-10% increase in pharmacotherapy for OUD. DSS contact email: DSS.RHTP@dss.mo.gov. ToRCH FAQs page: mydss.mo.gov/torch-faqs.",
-    "opportunityType": "RFI/RFP (roadmap published)",
-    "programAddress": "Missouri Department of Social Services, MO HealthNet Division, 615 Howerton Court, P.O. Box 6500, Jefferson City, MO 65102-6500",
-    "programName": "ToRCH Care (Transformation of Rural Community Health Care)",
-    "programPageUrl": "https://mydss.mo.gov/mhd/rural-health",
-    "rhtpEmail": "DSS.RHTP@dss.mo.gov",
-    "state": "Missouri",
-    "vendorEligible": "Yes",
     "nextSteps": [
       {
         "date": "2026-06-30",
@@ -653,7 +645,15 @@
         "date": "2026-09-30",
         "label": "Social Care Referral Platform / Community Information Exchange RFP (Q3 2026)"
       }
-    ]
+    ],
+    "notes": "Missouri received $216.3M for FY2026 (9th largest, top-ten ranked application nationally). Branded as 'ToRCH Care' (Transformation of Rural Community Health Care). Program envisions 7 regional coordinating networks and up to 30 community hubs (2-5 counties each). Hub Boundary Map feedback survey now open on program page. Per KCUR reporting, six pilot hub hospitals already operational using Medicaid waivers and Unite Us referral platform for social care coordination. Missouri still negotiating cooperative agreement terms with CMS \u2014 federal sign-off required before any sub-awards, hub activations, or tech procurement can proceed. First funding period runs Dec 29, 2026 to Oct 30, 2027. Plans to hire 100+ people (90 for hubs, 20-25 for regional networks). Plans for 10 hospital infrastructure grants and 3 new service grants (oncology/obstetric surgery) in 2026. Largest budget item: 'digital backbone' for data sharing ($364M over 5 years). Social Care Referral Platform / Community Information Exchange RFP coming Q3 2026. Ambient AI RFI (Q1 2026 target) appears overdue \u2014 not found on any procurement portal. NOTE: Revised budget proposal sent to CMS but cooperative agreement not yet finalized; all procurements blocked until federal approval received. Five-year benchmarks: 10% reduction in ER visits, 10% reduction in uncontrolled hypertension, 5% reduction in low birth weight, 5-10% increase in pharmacotherapy for OUD. DSS contact email: DSS.RHTP@dss.mo.gov. ToRCH FAQs page: mydss.mo.gov/torch-faqs.",
+    "opportunityType": "RFI/RFP (roadmap published)",
+    "programAddress": "Missouri Department of Social Services, MO HealthNet Division, 615 Howerton Court, P.O. Box 6500, Jefferson City, MO 65102-6500",
+    "programName": "ToRCH Care (Transformation of Rural Community Health Care)",
+    "programPageUrl": "https://mydss.mo.gov/mhd/rural-health",
+    "rhtpEmail": "DSS.RHTP@dss.mo.gov",
+    "state": "Missouri",
+    "vendorEligible": "Yes"
   },
   {
     "applicationDeadline": "",
@@ -664,14 +664,6 @@
     "fundingOpportunityPosted": "Yes",
     "lastUpdated": "2026-04-07",
     "leadAgency": "Montana Department of Public Health and Human Services (DPHHS)",
-    "notes": "Montana received $233.5M for FY2026 (4th highest, up to $1.2B over 5 years). CMS issued final budget approval on February 19, 2026. First Stakeholder Advisory Committee meeting held Jan 22, 2026 at MSU with 600+ participants; SAC meets bi-annually. VENDOR WEBINAR COMPLETED: March 11, 2026 webinar held; video recording and PowerPoint presentation now available as resources. NEW VENDOR INFO PAGE launched (dphhs.mt.gov/.../InformationforVendors) with FAQ document, Interested Vendor Checklist (created Feb 23), eMACS vendor portal registration links, commodity codes guide, and event response instructions. Centralized vendor information page created with vendor checklist, direct links to helpful videos, and FAQ document. Vendors must register in eMACS portal to respond to RFPs. NO RFPs POSTED YET on eMACS/bids.mt.gov as of March 16. Funding opportunities to be announced on rolling basis at ruralhealth.mt.gov. Procurement timeline: RFPs expected via eMACS/bids.mt.gov; April-June 2026 anticipated partner contract awards and funding distribution begins. Most initiatives via competitive bidding; some via government-to-government contracts or grant applications. State will prefer smaller number of statewide partners rather than individual providers. Five core initiatives: Workforce, Sustainable Access, Innovative Care, Community Health & Prevention, Technology Innovation. Eligible: tribal nations, government agencies, health care providers, educational institutions, nonprofits. DPHHS actively hiring 10+ RHTP staff. Must submit initial federal progress report by August 2026; must distribute and start spending 2026 grant by September 2026. MHA partner interest form: cvent.me/z41XXV. Contact: HHSRuralHealthTransformation@mt.gov. Vendor webinar held March 11 (DPHHS + DOA). First RFPs expected March 2026 on bids.mt.gov; procurement through June 2026. Approved initiatives page published. Community/provider funding to be posted rolling at ruralhealth.mt.gov. Vendor resources (checklist, FAQs) published. MAJOR UPDATE: DPHHS NOW ACCEPTING PROPOSALS for two Center of Excellence (CoE) RFPs posted on bids.mt.gov: (1) proposals to create the Rural Health Center of Excellence, and (2) proposals to support facilities in implementing CoE recommendations. Additional RFPs planned over coming months. Partner contract award decisions anticipated April-June 2026.",
-    "opportunityType": "RFP (Center of Excellence)",
-    "programAddress": "Montana Department of Public Health and Human Services, P.O. Box 4210, Helena, MT 59604-4210",
-    "programName": "Montana Rural Health Transformation Program",
-    "programPageUrl": "https://dphhs.mt.gov/RuralHealthTransformationProgram/",
-    "rhtpEmail": "HHSRuralHealthTransformation@mt.gov",
-    "state": "Montana",
-    "vendorEligible": "Yes",
     "nextSteps": [
       {
         "date": "",
@@ -681,7 +673,15 @@
         "date": "2026-06-30",
         "label": "Partner contract awards and funding distribution (April-June 2026)"
       }
-    ]
+    ],
+    "notes": "Montana received $233.5M for FY2026 (4th highest, up to $1.2B over 5 years). CMS issued final budget approval on February 19, 2026. First Stakeholder Advisory Committee meeting held Jan 22, 2026 at MSU with 600+ participants; SAC meets bi-annually. VENDOR WEBINAR COMPLETED: March 11, 2026 webinar held; video recording and PowerPoint presentation now available as resources. NEW VENDOR INFO PAGE launched (dphhs.mt.gov/.../InformationforVendors) with FAQ document, Interested Vendor Checklist (created Feb 23), eMACS vendor portal registration links, commodity codes guide, and event response instructions. Centralized vendor information page created with vendor checklist, direct links to helpful videos, and FAQ document. Vendors must register in eMACS portal to respond to RFPs. NO RFPs POSTED YET on eMACS/bids.mt.gov as of March 16. Funding opportunities to be announced on rolling basis at ruralhealth.mt.gov. Procurement timeline: RFPs expected via eMACS/bids.mt.gov; April-June 2026 anticipated partner contract awards and funding distribution begins. Most initiatives via competitive bidding; some via government-to-government contracts or grant applications. State will prefer smaller number of statewide partners rather than individual providers. Five core initiatives: Workforce, Sustainable Access, Innovative Care, Community Health & Prevention, Technology Innovation. Eligible: tribal nations, government agencies, health care providers, educational institutions, nonprofits. DPHHS actively hiring 10+ RHTP staff. Must submit initial federal progress report by August 2026; must distribute and start spending 2026 grant by September 2026. MHA partner interest form: cvent.me/z41XXV. Contact: HHSRuralHealthTransformation@mt.gov. Vendor webinar held March 11 (DPHHS + DOA). First RFPs expected March 2026 on bids.mt.gov; procurement through June 2026. Approved initiatives page published. Community/provider funding to be posted rolling at ruralhealth.mt.gov. Vendor resources (checklist, FAQs) published. MAJOR UPDATE: DPHHS NOW ACCEPTING PROPOSALS for two Center of Excellence (CoE) RFPs posted on bids.mt.gov: (1) proposals to create the Rural Health Center of Excellence, and (2) proposals to support facilities in implementing CoE recommendations. Additional RFPs planned over coming months. Partner contract award decisions anticipated April-June 2026.",
+    "opportunityType": "RFP (Center of Excellence)",
+    "programAddress": "Montana Department of Public Health and Human Services, P.O. Box 4210, Helena, MT 59604-4210",
+    "programName": "Montana Rural Health Transformation Program",
+    "programPageUrl": "https://dphhs.mt.gov/RuralHealthTransformationProgram/",
+    "rhtpEmail": "HHSRuralHealthTransformation@mt.gov",
+    "state": "Montana",
+    "vendorEligible": "Yes"
   },
   {
     "applicationDeadline": "April 8, 2026 (Food as Medicine); April 14, 2026 (Advisory Board); April 24, 2026 (Hospital-to-Home RPM); June 1, 2026 (Workforce)",
@@ -695,8 +695,8 @@
     "nextSteps": [
       {
         "date": "2026-04-08",
-        "label": "Food as Medicine / Regional Food Pantry Development RFA deadline",
-        "isShown": false
+        "isShown": false,
+        "label": "Food as Medicine / Regional Food Pantry Development RFA deadline"
       },
       {
         "date": "2026-04-14",
@@ -708,8 +708,8 @@
       },
       {
         "date": "2026-06-01",
-        "label": "Rural Health Care Workforce Incentive and Sustainability RFA deadline",
-        "isShown": false
+        "isShown": false,
+        "label": "Rural Health Care Workforce Incentive and Sustainability RFA deadline"
       }
     ],
     "notes": "Nebraska received $218.5M for FY2026. Revised notice of award received Feb 27, 2026 - DHHS can now access federal funds. MULTIPLE RFAs NOW OPEN: (1) RHTP-4.4A Chronic Disease Management Navigation and Education - deadline EXTENDED to March 27, 2026 (confirmed via direct listserv communication from program staff); (2) RHTP-1.2 Food as Medicine/Regional Food Pantry Development - due April 8, 2026; (3) RHTP-3.3 Rural Health Care Workforce Incentive and Sustainability / SNAP E&T ($2M) - due June 1, 2026. Additional RFAs released or planned: Oral Health/NE Teeth Forever (released Jan 8), Community Health Worker Networks (released Jan 8), Rural Jurisdictional Stockpiles (released Jan 21), Nebraska Kids Fitness & Nutrition (March 16), Crisis Stabilization Centers (mid-March), EMS Regionalization (May 2026), Rural Provider Recruitment (ongoing). Multiple additional RFAs still coming throughout 2026. Seven integrated initiatives: (1) Food as Medicine, (2) Regionalized Rural Access and Navigation, (3) Rural Workforce Acceleration, (4) eHealth and Mobile Care, (5) Rural Emergency Behavioral Health, (6) Assisted Living Facility Incentive, (7) Rural Health Technology Catalyst Fund. Contact: DHHS.RHTP@nebraska.gov. NEW: DHHS established six Health Care Advisory Regions (HCARs) and is accepting applications for 18 advisory board positions (3 per region: hospital-based EMS, community/county-based EMS, ancillary health care provider). Advisory board members will serve two-year terms identifying regional health care needs and assessing provider readiness for RHTP initiatives. Applications due April 14, 2026. Contact: DHHS.RHTP@nebraska.gov. NEW RFA: RHTP-4.4B Hospital-to-Home Remote Patient Monitoring (RPM) released April 2, 2026, due April 24, 2026. Eligible applicants: rural hospitals and FQHCs (must be lead applicant). Funding range: $200K-$1M per application. RHTP-4.4A (Chronic Disease Management) deadline was March 17/27 (now closed). Food as Medicine (RHTP-1.2) due April 8 is imminent.",
@@ -845,13 +845,13 @@
     "nextSteps": [
       {
         "date": "2026-05-01",
-        "label": "Hub Lead awards announced",
-        "isShown": false
+        "isShown": false,
+        "label": "Hub Lead awards announced"
       },
       {
         "date": "2026-06-01",
-        "label": "Hub Lead contract period begins",
-        "isShown": false
+        "isShown": false,
+        "label": "Hub Lead contract period begins"
       },
       {
         "date": "",
@@ -884,8 +884,8 @@
       },
       {
         "date": "2026-04-30",
-        "label": "Workforce Retention Grant application deadline",
-        "isShown": false
+        "isShown": false,
+        "label": "Workforce Retention Grant application deadline"
       }
     ],
     "notes": "North Dakota received $198.9M for FY2026 ($500M+ over 5 years). FIRST FUNDING OPPORTUNITY RELEASED: Workforce Retention Grant (~$10M) for critical access hospitals and their owned and operated clinics. State anticipates giving out around 37 grants each totaling ~$270K, though applicants can apply for more. Eligible uses: retention bonuses, tuition reimbursement, child care partnerships, wellness programs, mentorship, training, career advancement, gym memberships. Some strategies require a five-year service commitment. Deadline April 30, 2026. Technical assistance meeting March 30, 2026 at 3 PM CT (MS Teams link on RHTP website). CMS approved $194.8M of ND's revised budget on Feb 25, 2026 (additional $4.1M still under review). Dedicated funding opportunities page: hhs.nd.gov/rural-health-transformation/funding. Year-one budget breakdown: $44.4M workforce, $19.2M healthy ND, $101.4M healthcare access, $33.9M technology/data. Additional funding opportunities will be released in phases across four pillars. Year-one funds must be obligated by Oct 30, 2026 and fully spent by Sept 30, 2027. Legislature approved $398M for first two years via special session. ND has $250 per resident - highest per-capita in first distribution round. New applicants must register with Secretary of State, vendor registry, and provide W9. Contact: rhtp@nd.gov. HHS hosted technical assistance meeting on March 30 for critical access hospital staff with questions about the Workforce Retention Grant. Additional funding opportunities will be rolled out in phases. North Dakota enacted PA Licensure Compact legislation during a special session tied to RHTP \u2014 the first legislative victory tied to PA practice since RHTP grants were announced. Funding opportunities page: hhs.nd.gov/rural-health-transformation/funding.",
@@ -938,8 +938,8 @@
     "nextSteps": [
       {
         "date": "2026-04-13",
-        "label": "Community-Led Wellness Hubs microgrants deadline at 11:59 PM CT",
-        "isShown": false
+        "isShown": false,
+        "label": "Community-Led Wellness Hubs microgrants deadline at 11:59 PM CT"
       },
       {
         "date": "2026-04-15",
@@ -974,9 +974,14 @@
     "awardAmount": "$197,271,578",
     "cmsApplicationUrl": "https://www.oregon.gov/oha/hpa/hp/Documents/Oregon%20RHT%20Project%20Summary%20and%20Narrative.pdf",
     "fundingOpportunityPosted": "Forthcoming",
-    "lastUpdated": "2026-04-07",
+    "lastUpdated": "2026-04-12",
     "leadAgency": "Oregon Health Authority (OHA)",
     "nextSteps": [
+      {
+        "date": "2026-04-14",
+        "isShown": true,
+        "label": "OHA webinar on Catalyst Award RFGP process (12:00-1:00 PM PST) - register at Teams link"
+      },
       {
         "date": "",
         "isShown": true,
@@ -993,7 +998,7 @@
         "label": "Register in OregonBuys and verify UEI before applying"
       }
     ],
-    "notes": "Oregon received $197.3M for FY2026. Catalyst Award RFGP expected to open early April 2026 with a 45-day application window (deadline ~mid-May 2026). Catalyst Awards: up to 80 projects funded, min $200K per project, max $5M per proposal per budget period. Proposals can include up to 3 projects, each tied to one primary outcome and at least one target under one of the four initiatives. Must have physical location or provide in-person services in Oregon. Collaborative proposals welcome but only one lead entity per proposal. Must register in OregonBuys and obtain/verify UEI before applying. Budget was frozen pending CMS review after revised budget submitted Jan 30 - may explain RFGP delay. 255 nonbinding Intent to Apply responses received from last year's survey. Three funding pathways: (1) Catalyst Awards - competitive RFGP for ready-to-implement projects across three initiatives (Healthy Communities & Prevention, Workforce Capacity & Resilience, Technology & Data Modernization); (2) Immediate Impact Awards - direct/non-competitive for state-identified opportunities; (3) Regional Sustainability Awards - TA grants for rural health network development. Awards mid-2026. 11 CMS allowable use categories. Non-allowable: pre-award costs, lobbying, supplanting existing funding, large-scale EMR replacements. Vendor Interest Directory live - register at Smartsheet vendor form. Must serve rural (10+ miles from 40K+ population center) or frontier (6 or fewer people/sq mi). No limits on entity types. Contact: RHTP@oha.oregon.gov or (971) 446-0946. OHA held March 25 preparatory webinar for Catalyst Award RFGP. Vendor interest list/directory being developed. Phase 1 Catalyst Awards = $80M (40% of total funds). Collaborative proposals welcomed with one eligible entity as lead proposer/fiduciary. UPDATE: OHA held March 25 preparatory webinar for Catalyst Award RFGP. RFGP has NOT opened yet as of April 7, despite earlier expectation of 'early April.' OHA's latest language says 'spring 2026' for RFGP release and 'early summer 2026' for application deadline. RFGP appears imminent but exact release date uncertain.",
+    "notes": "Oregon received $197.3M for FY2026. Catalyst Award RFGP expected to open early April 2026 with a 45-day application window (deadline ~mid-May 2026). Catalyst Awards: up to 80 projects funded, min $200K per project, max $5M per proposal per budget period. Proposals can include up to 3 projects, each tied to one primary outcome and at least one target under one of the four initiatives. Must have physical location or provide in-person services in Oregon. Collaborative proposals welcome but only one lead entity per proposal. Must register in OregonBuys and obtain/verify UEI before applying. Budget was frozen pending CMS review after revised budget submitted Jan 30 - may explain RFGP delay. 255 nonbinding Intent to Apply responses received from last year's survey. Three funding pathways: (1) Catalyst Awards - competitive RFGP for ready-to-implement projects across three initiatives (Healthy Communities & Prevention, Workforce Capacity & Resilience, Technology & Data Modernization); (2) Immediate Impact Awards - direct/non-competitive for state-identified opportunities; (3) Regional Sustainability Awards - TA grants for rural health network development. Awards mid-2026. 11 CMS allowable use categories. Non-allowable: pre-award costs, lobbying, supplanting existing funding, large-scale EMR replacements. Vendor Interest Directory live - register at Smartsheet vendor form. Must serve rural (10+ miles from 40K+ population center) or frontier (6 or fewer people/sq mi). No limits on entity types. Contact: RHTP@oha.oregon.gov or (971) 446-0946. OHA held March 25 preparatory webinar for Catalyst Award RFGP. Vendor interest list/directory being developed. Phase 1 Catalyst Awards = $80M (40% of total funds). Collaborative proposals welcomed with one eligible entity as lead proposer/fiduciary. UPDATE: OHA held March 25 preparatory webinar for Catalyst Award RFGP. RFGP has NOT opened yet as of April 7, despite earlier expectation of 'early April.' OHA's latest language says 'spring 2026' for RFGP release and 'early summer 2026' for application deadline. RFGP appears imminent but exact release date uncertain. OHA announced April 14, 2026 webinar (12-1 PM PST) for organizations interested in applying for Catalyst Award Grants. Registration via Microsoft Teams. Slide deck and recording will be posted online after the webinar for those unable to attend. OHA advises organizations to begin identifying ready-to-implement projects now.",
     "opportunityType": "RFGP (Request for Grant Proposals)",
     "programAddress": "Oregon Health Authority, 500 Summer Street NE, E-20, Salem, OR 97301-1097",
     "programName": "Oregon Rural Health Transformation Program",
@@ -1011,14 +1016,6 @@
     "fundingOpportunityPosted": "No - RFA/RFP Planned",
     "lastUpdated": "2026-04-07",
     "leadAgency": "Pennsylvania Department of Human Services",
-    "notes": "Pennsylvania received $193.3M for FY2026. $200M/year x 5 years = $1B total. Funds flowing through eight Regional Rural Care Collaboratives (RCCs) built on existing PREP organizations, PA AHEC, University of Pittsburgh Medicaid Research Center, and other partners. PA has statutory authority via Act 45 of 2025 (Article II-H) establishing the program within DHS. Updated February 2026 plan published on program page (2026-02-06). DHS will appoint a collaborative manager for each RCC region. CREDC (Capital Region Economic Development Corporation) evaluating composition of southcentral PA Regional Care Collaborative and identifying priority investments (as of March 2026). Six priority areas: technology/telehealth, workforce, maternal health, behavioral health, older adults, emergency services/transportation. DHS hosting RHTP Public Webinar on March 31, 2026 at 3:30 PM to share information on approach to dispersing and operationalizing the $193M RHTP funds. Registration link available on PA DHS program page. Senate advanced SB 614 (FQHC Preceptorship legislation) with amendment addressing RHTP funding for this purpose. No specific downstream RFA or vendor application posted yet. Monitor DHS program page for updates. DHS hosted public webinar on March 31, 2026 covering updates on Year 1 of the Rural Health Transformation Plan. Program established under Act 45 of 2025, Article II-H, which gives DHS statutory authority to distribute funding, oversee implementation, and monitor compliance. DHS ListServ available for RHTP updates. UPDATE: DHS held kickoff webinar on March 31, 2026 covering Year 1 implementation overview. DHS indicated the first RFP release would be within 2 weeks of the webinar (by ~April 14, 2026). DHS is soliciting nominations for RHTP Advisory Council and Regional Rural Care Collaboratives (RCCs), deadline April 10, 2026 at 5 PM. Program established under Act 45 of 2025, Article II-H.",
-    "opportunityType": "N/A",
-    "programAddress": "Pennsylvania Department of Human Services, P.O. Box 2675, Harrisburg, PA 17105-2675",
-    "programName": "Pennsylvania Rural Health Transformation Plan",
-    "programPageUrl": "https://www.pa.gov/agencies/dhs/programs-services/healthcare/rural-health/rural-health-transformation-plan",
-    "rhtpEmail": "",
-    "state": "Pennsylvania",
-    "vendorEligible": "TBD",
     "nextSteps": [
       {
         "date": "2026-04-10",
@@ -1032,7 +1029,15 @@
         "date": "2026-05-29",
         "label": "NEPA Rural Health Summit at King's College (8am-4pm)"
       }
-    ]
+    ],
+    "notes": "Pennsylvania received $193.3M for FY2026. $200M/year x 5 years = $1B total. Funds flowing through eight Regional Rural Care Collaboratives (RCCs) built on existing PREP organizations, PA AHEC, University of Pittsburgh Medicaid Research Center, and other partners. PA has statutory authority via Act 45 of 2025 (Article II-H) establishing the program within DHS. Updated February 2026 plan published on program page (2026-02-06). DHS will appoint a collaborative manager for each RCC region. CREDC (Capital Region Economic Development Corporation) evaluating composition of southcentral PA Regional Care Collaborative and identifying priority investments (as of March 2026). Six priority areas: technology/telehealth, workforce, maternal health, behavioral health, older adults, emergency services/transportation. DHS hosting RHTP Public Webinar on March 31, 2026 at 3:30 PM to share information on approach to dispersing and operationalizing the $193M RHTP funds. Registration link available on PA DHS program page. Senate advanced SB 614 (FQHC Preceptorship legislation) with amendment addressing RHTP funding for this purpose. No specific downstream RFA or vendor application posted yet. Monitor DHS program page for updates. DHS hosted public webinar on March 31, 2026 covering updates on Year 1 of the Rural Health Transformation Plan. Program established under Act 45 of 2025, Article II-H, which gives DHS statutory authority to distribute funding, oversee implementation, and monitor compliance. DHS ListServ available for RHTP updates. UPDATE: DHS held kickoff webinar on March 31, 2026 covering Year 1 implementation overview. DHS indicated the first RFP release would be within 2 weeks of the webinar (by ~April 14, 2026). DHS is soliciting nominations for RHTP Advisory Council and Regional Rural Care Collaboratives (RCCs), deadline April 10, 2026 at 5 PM. Program established under Act 45 of 2025, Article II-H.",
+    "opportunityType": "N/A",
+    "programAddress": "Pennsylvania Department of Human Services, P.O. Box 2675, Harrisburg, PA 17105-2675",
+    "programName": "Pennsylvania Rural Health Transformation Plan",
+    "programPageUrl": "https://www.pa.gov/agencies/dhs/programs-services/healthcare/rural-health/rural-health-transformation-plan",
+    "rhtpEmail": "",
+    "state": "Pennsylvania",
+    "vendorEligible": "TBD"
   },
   {
     "applicationDeadline": "",
@@ -1082,8 +1087,8 @@
     "nextSteps": [
       {
         "date": "2026-04-17",
-        "label": "Rural Health Forward RFP deadline",
-        "isShown": false
+        "isShown": false,
+        "label": "Rural Health Forward RFP deadline"
       },
       {
         "date": "",
@@ -1169,6 +1174,23 @@
     "fundingOpportunityPosted": "Yes",
     "lastUpdated": "2026-04-01",
     "leadAgency": "Utah Department of Health and Human Services",
+    "nextSteps": [
+      {
+        "date": "2026-04-03",
+        "isShown": false,
+        "label": "Pre-application questionnaire due for RISE Clinical Preceptor Stipend"
+      },
+      {
+        "date": "2026-04-06",
+        "isShown": false,
+        "label": "PATH Behavioral Health-Primary Care Integration RFP opens (est.)"
+      },
+      {
+        "date": "2026-05-01",
+        "isShown": false,
+        "label": "RISE Clinical Preceptor Stipend and GME Strategic Plan RFPs open (est.)"
+      }
+    ],
     "notes": "Utah received $195.7M for FY2026 ($1B over 5 years). MAJOR UPDATE: THREE FUNDING OPPORTUNITIES NOW FORECASTED on dedicated funding page (dhhs.utah.gov/ruralhealth/funding-opportunities/). (1) PATH 1.5/1.G: Behavioral Health-Primary Care Integration - estimated open date April 6, 2026; up to $2M/year, 3-6 awards of $333K-$667K each, $15M total over 5 years; requires collaboration with min 3 local service agencies (at least one safety net provider); implements integrated behavioral health-primary care stepped-care model. (2) RISE 2.2/2.C: Rural Clinical Preceptor Stipend Program - estimated open May 1-30, 2026; up to $200K/year, 20-50 stipends; MDs/DOs up to $10K/year, APRNs/PAs up to $7.5K/year; PRE-APPLICATION QUESTIONNAIRE DUE APRIL 3, 2026. (3) RISE 2.1/2.A: GME Strategic Plan - estimated open May 1, 2026; up to $1.6M single award; develops 10-year rural GME strategic plan. All project starts June 1 or June 15, 2026. All funding contingent on appropriated funds. Seven outcome-driven initiatives: PATH ($29M), RISE ($28.8M), SHIFT ($55.5M), FAST ($18M), LIFT ($26.5M), SUPPORT ($16.9M), LINCS ($16M). Rural definition excludes Salt Lake, Davis, Utah, and Weber counties. Contact: ruralhealth@utah.gov.",
     "opportunityType": "Multiple RFPs (forecasted/opening)",
     "programAddress": "Utah Department of Health and Human Services, 195 North 1950 West, Salt Lake City, UT 84116",
@@ -1176,24 +1198,7 @@
     "programPageUrl": "https://dhhs.utah.gov/ruralhealth/",
     "rhtpEmail": "ruralhealth@utah.gov",
     "state": "Utah",
-    "vendorEligible": "Yes",
-    "nextSteps": [
-      {
-        "date": "2026-04-03",
-        "label": "Pre-application questionnaire due for RISE Clinical Preceptor Stipend",
-        "isShown": false
-      },
-      {
-        "date": "2026-04-06",
-        "label": "PATH Behavioral Health-Primary Care Integration RFP opens (est.)",
-        "isShown": false
-      },
-      {
-        "date": "2026-05-01",
-        "label": "RISE Clinical Preceptor Stipend and GME Strategic Plan RFPs open (est.)",
-        "isShown": false
-      }
-    ]
+    "vendorEligible": "Yes"
   },
   {
     "applicationDeadline": "April 10, 2026",
@@ -1207,8 +1212,8 @@
     "nextSteps": [
       {
         "date": "2026-04-10",
-        "label": "Dialysis/ventilator care and LNA training RFPs due at 4:30 PM",
-        "isShown": false
+        "isShown": false,
+        "label": "Dialysis/ventilator care and LNA training RFPs due at 4:30 PM"
       }
     ],
     "notes": "Vermont received $195.1M for FY2026 (among highest per-capita awards). TWO RFPs NOW OPEN via Department of Disabilities, Aging and Independent Living (DAIL): (1) Expand availability and access to dialysis care and ventilator care for nursing facility residents with high acuity care needs (Year-1 allocation $1.45M); (2) Expand access to Licensed Nursing Assistant (LNA) training programs (Year-1 allocation $810K). Both due April 10, 2026 at 4:30 PM. Posted at dail.vermont.gov/news/rural-health-transformation-grant-opportunities. Contact: AHS.DAILRHTGrant@vermont.gov. Additional RFPs and procurement options expected to roll out - AHS announced 'some as grants and some as contracts.' Chittenden County classified as non-rural for grant purposes; providers from non-rural counties may apply for projects demonstrably impacting rural communities. Compressed spending window - must spend by September with reporting 60 days before year-end. Award is 1 year at a time - second-year funding not guaranteed. Revised budget submitted to CMS by Jan 30. Five initiative areas: Regionalization and Innovative Care Strategies, Clinically Integrated Network of Shared Services, Strengthening Primary Care, Healthcare Workforce Development, Price Transparency and Insurance Competition. Monitor AHS website, DVHA RFP page (dvha.vermont.gov/administration/requests-proposals), DAIL grants page, and sign up for listserv.",
