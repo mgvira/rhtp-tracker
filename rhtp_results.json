@@ -722,27 +722,49 @@
     "vendorEligible": "Yes"
   },
   {
-    "applicationDeadline": "",
-    "applicationLink": "",
-    "applicationOpenDate": "Spring/Summer 2026 (first opportunities); May 2026 (RHIT Grant RFP)",
+    "applicationDeadline": "April 30, 2026 (Flex Fund Round 1, 11:59 PM PT)",
+    "applicationLink": "https://www.nvha.nv.gov/RHTP/rht-nofos/",
+    "applicationOpenDate": "March 2026 (multiple RFAs released)",
     "awardAmount": "$179,931,608",
     "cmsApplicationUrl": "https://nvha.nv.gov/uploadedFiles/nvhanvgov/content/Community/Project%20Narrative.pdf",
-    "fundingOpportunityPosted": "No - RFA/RFP Planned",
-    "lastUpdated": "2026-04-01",
+    "fundingOpportunityPosted": "Yes",
+    "lastUpdated": "2026-04-16",
     "leadAgency": "Nevada Health Authority",
     "nextSteps": [
       {
+        "date": "2026-04-30",
+        "isShown": true,
+        "label": "Flex Fund RFA Round 1 deadline (11:59 PM PT) - $36M available, submit via email to RHTP@nvha.nv.gov"
+      },
+      {
+        "date": "2026-05-29",
+        "isShown": true,
+        "label": "Flex Fund Round 1 funding decisions finalized"
+      },
+      {
+        "date": "",
+        "isShown": true,
+        "label": "Flex Fund Round 2 will distribute remaining funds after Round 1"
+      },
+      {
+        "date": "",
+        "isShown": true,
+        "label": "RHOAP and Workforce Rural Residency Program RFAs coming soon"
+      },
+      {
         "date": "2026-05-01",
+        "isShown": true,
         "label": "RHIT Grant RFP release (May 2026)"
       },
       {
         "date": "2026-09-01",
+        "isShown": true,
         "label": "RHIT Grant awards announced (September 2026)"
       }
     ],
-    "notes": "Nevada received $179.9M for FY2026. First Steering Committee (RHTSC) meeting held March 11, 2026 at 1:00 PM. Second public workshop held March 5, 2026 (video available); first workshop held Feb 18. Winter Stakeholder Update held Jan 27. Program page now states opportunities will be announced 'later this spring and summer' through public workshops, website, NVHA ListServ, and additional channels - this is a slight push from the previous 'starting in March' language. 2026 RHT Program Overview PDF (March 2026 edition) and Timeline graphic now available on RHTP page. ATI Advisory reports RHIT Grant RFP will be released May 2026, with awards in September 2026 (contracts Sept 15, 2026 - Sept 30, 2027). NVHA actively hiring program staff (Management Analyst III and IV positions). Four funded initiatives with allocations: RHOAP virtual specialty mentorship/RPM/AI (15%, ~$27M/yr), Flex Fund for rural provider infrastructure (20%, ~$36M/yr), Workforce Recruitment and Rural Access (40%, ~$72M/yr), Rural Health Innovation and Technology Grant (15%, ~$27M/yr). Strong preference for awards to rural CAHs, CCBHCs, clinics, FQHCs, school-based health centers. Sign up for NVHA ListServ for announcements. Contact: RHTP@nvha.nv.gov. Steering Committee inaugural meeting held March 11, 2026. RHTSC members to be announced. RHIT Grant RFP confirmed May 2026, awards Sept 2026, contracts Sept 15, 2026 - Sept 30, 2027. Winter Stakeholder Update Workshop held Jan 27. NVHA hiring Management Analyst positions. Four initiatives: RHOAP (15%), WRRAP (~$80M/yr), RHIT (15%), data/evaluation.",
-    "opportunityType": "Multiple grants (planned)",
-    "programAddress": "Nevada Health Authority, 9850 Double R Blvd, Reno, NV 89521",
+    "notes": "Nevada received $179.9M for FY2026. First Steering Committee (RHTSC) meeting held March 11, 2026 at 1:00 PM. Second public workshop held March 5, 2026 (video available); first workshop held Feb 18. Winter Stakeholder Update held Jan 27. Program page now states opportunities will be announced 'later this spring and summer' through public workshops, website, NVHA ListServ, and additional channels - this is a slight push from the previous 'starting in March' language. 2026 RHT Program Overview PDF (March 2026 edition) and Timeline graphic now available on RHTP page. ATI Advisory reports RHIT Grant RFP will be released May 2026, with awards in September 2026 (contracts Sept 15, 2026 - Sept 30, 2027). NVHA actively hiring program staff (Management Analyst III and IV positions). Four funded initiatives with allocations: RHOAP virtual specialty mentorship/RPM/AI (15%, ~$27M/yr), Flex Fund for rural provider infrastructure (20%, ~$36M/yr), Workforce Recruitment and Rural Access (40%, ~$72M/yr), Rural Health Innovation and Technology Grant (15%, ~$27M/yr). Strong preference for awards to rural CAHs, CCBHCs, clinics, FQHCs, school-based health centers. Sign up for NVHA ListServ for announcements. Contact: RHTP@nvha.nv.gov. Steering Committee inaugural meeting held March 11, 2026. RHTSC members to be announced. RHIT Grant RFP confirmed May 2026, awards Sept 2026, contracts Sept 15, 2026 - Sept 30, 2027. Winter Stakeholder Update Workshop held Jan 27. NVHA hiring Management Analyst positions. Four initiatives: RHOAP (15%), WRRAP (~$80M/yr), RHIT (15%), data/evaluation. MAJOR UPDATE (April 2026): Multiple RFAs now live on NVHA website (nvha.nv.gov/RHTP/rht-nofos/). (1) RURAL HEALTH SYSTEM FLEX FUND RFA (Round 1): $35,986,322 available for BP1. Proposals due April 30, 2026 by 11:59 PM PT via email. Funding decisions by May 29, 2026. Projects must complete by Aug 30, 2027. Purpose: modernize rural healthcare infrastructure - equipment, mobile units, telehealth, diagnostics, cybersecurity, minor renovations, EMS, revenue cycle management. Priority applicants: rural hospitals, FQHCs, CCBHCs, school-based health centers, primary care/MH providers in rural areas. Non-rural entities eligible with MOUs from rural providers. Vendors eligible but MUST have established collaboration with rural communities/hospitals/providers. No cost sharing required. Indirect costs NOT allowed but up to 10% admin expenses permitted. No cap on capital expenditures (revised from 20% cap). EMR replacement limited to $8.99M total. Monthly reimbursement basis. Round 2 will distribute remaining funds. Revised March 24, 2026. Submit via pre-populated email link on NVHA website. Must be registered NV state vendor (T number). Application forms at nvha.nv.gov/RHTP/rht-nofos/. (2) Also released March 2026: Workforce Recruitment and Rural Access Program RFA (recruitment/retention and apprenticeship/training tracks), Rural Tribal Health System Transformation Program, Rural Correctional Health Transformation, Rural Veterans Health Transformation. (3) Coming soon: RHOAP and Workforce Rural Residency Program RFAs. Five-year program with annual budget periods (BP1-BP5, FY2026-FY2030). Subaward spending deadline 30 days before state's Sept 30 deadline each year.",
+    "opportunityType": "Multiple RFAs (Flex Fund, Workforce, Tribal, Correctional, Veterans)",
+    "programAddress": "Nevada Health Authority, 4070 Silver Sage Drive, Carson City, NV 89701",
     "programName": "Rural Health Outcomes Accelerator Program (RHOAP)",
     "programPageUrl": "https://www.nvha.nv.gov/RHTP",
     "rhtpEmail": "RHTP@nvha.nv.gov",
