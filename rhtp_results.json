@@ -968,29 +968,34 @@
     "vendorEligible": "Yes"
   },
   {
-    "applicationDeadline": "Early summer 2026 (per OHA's latest timeline)",
-    "applicationLink": "",
-    "applicationOpenDate": "Spring 2026 (RFGP expected to open imminently)",
+    "applicationDeadline": "May 26, 2026 (3PM PST)",
+    "applicationLink": "https://oregonbuys.gov/bso/",
+    "applicationOpenDate": "April 2026 (RFGP posted on OregonBuys)",
     "awardAmount": "$197,271,578",
     "cmsApplicationUrl": "https://www.oregon.gov/oha/hpa/hp/Documents/Oregon%20RHT%20Project%20Summary%20and%20Narrative.pdf",
-    "fundingOpportunityPosted": "Forthcoming",
-    "lastUpdated": "2026-04-12",
+    "fundingOpportunityPosted": "Yes",
+    "lastUpdated": "2026-04-16",
     "leadAgency": "Oregon Health Authority (OHA)",
     "nextSteps": [
       {
         "date": "2026-04-14",
         "isShown": true,
-        "label": "OHA webinar on Catalyst Award RFGP process (12:00-1:00 PM PST) - register at Teams link"
+        "label": "OHA webinar on Catalyst Award RFGP process (12-1 PM PST) - register at Teams link"
+      },
+      {
+        "date": "2026-05-26",
+        "isShown": true,
+        "label": "Catalyst Awards RFGP proposal deadline (3PM PST) - Solicitation #S-44300-00016498 on OregonBuys"
+      },
+      {
+        "date": "2026-07-01",
+        "isShown": true,
+        "label": "Up to 80 Catalyst Award projects expected to be funded by early July"
       },
       {
         "date": "",
         "isShown": true,
-        "label": "Catalyst Award RFGP opening imminently (spring 2026)"
-      },
-      {
-        "date": "",
-        "isShown": true,
-        "label": "RFGP response deadline ~early summer 2026"
+        "label": "Late summer 2026: $50.4M direct grants planned (35 rural hospitals, 100 RHCs, 33 LPHAs)"
       },
       {
         "date": "",
@@ -998,7 +1003,7 @@
         "label": "Register in OregonBuys and verify UEI before applying"
       }
     ],
-    "notes": "Oregon received $197.3M for FY2026. Catalyst Award RFGP expected to open early April 2026 with a 45-day application window (deadline ~mid-May 2026). Catalyst Awards: up to 80 projects funded, min $200K per project, max $5M per proposal per budget period. Proposals can include up to 3 projects, each tied to one primary outcome and at least one target under one of the four initiatives. Must have physical location or provide in-person services in Oregon. Collaborative proposals welcome but only one lead entity per proposal. Must register in OregonBuys and obtain/verify UEI before applying. Budget was frozen pending CMS review after revised budget submitted Jan 30 - may explain RFGP delay. 255 nonbinding Intent to Apply responses received from last year's survey. Three funding pathways: (1) Catalyst Awards - competitive RFGP for ready-to-implement projects across three initiatives (Healthy Communities & Prevention, Workforce Capacity & Resilience, Technology & Data Modernization); (2) Immediate Impact Awards - direct/non-competitive for state-identified opportunities; (3) Regional Sustainability Awards - TA grants for rural health network development. Awards mid-2026. 11 CMS allowable use categories. Non-allowable: pre-award costs, lobbying, supplanting existing funding, large-scale EMR replacements. Vendor Interest Directory live - register at Smartsheet vendor form. Must serve rural (10+ miles from 40K+ population center) or frontier (6 or fewer people/sq mi). No limits on entity types. Contact: RHTP@oha.oregon.gov or (971) 446-0946. OHA held March 25 preparatory webinar for Catalyst Award RFGP. Vendor interest list/directory being developed. Phase 1 Catalyst Awards = $80M (40% of total funds). Collaborative proposals welcomed with one eligible entity as lead proposer/fiduciary. UPDATE: OHA held March 25 preparatory webinar for Catalyst Award RFGP. RFGP has NOT opened yet as of April 7, despite earlier expectation of 'early April.' OHA's latest language says 'spring 2026' for RFGP release and 'early summer 2026' for application deadline. RFGP appears imminent but exact release date uncertain. OHA announced April 14, 2026 webinar (12-1 PM PST) for organizations interested in applying for Catalyst Award Grants. Registration via Microsoft Teams. Slide deck and recording will be posted online after the webinar for those unable to attend. OHA advises organizations to begin identifying ready-to-implement projects now.",
+    "notes": "Oregon received $197.3M for FY2026. Catalyst Award RFGP expected to open early April 2026 with a 45-day application window (deadline ~mid-May 2026). Catalyst Awards: up to 80 projects funded, min $200K per project, max $5M per proposal per budget period. Proposals can include up to 3 projects, each tied to one primary outcome and at least one target under one of the four initiatives. Must have physical location or provide in-person services in Oregon. Collaborative proposals welcome but only one lead entity per proposal. Must register in OregonBuys and obtain/verify UEI before applying. Budget was frozen pending CMS review after revised budget submitted Jan 30 - may explain RFGP delay. 255 nonbinding Intent to Apply responses received from last year's survey. Three funding pathways: (1) Catalyst Awards - competitive RFGP for ready-to-implement projects across three initiatives (Healthy Communities & Prevention, Workforce Capacity & Resilience, Technology & Data Modernization); (2) Immediate Impact Awards - direct/non-competitive for state-identified opportunities; (3) Regional Sustainability Awards - TA grants for rural health network development. Awards mid-2026. 11 CMS allowable use categories. Non-allowable: pre-award costs, lobbying, supplanting existing funding, large-scale EMR replacements. Vendor Interest Directory live - register at Smartsheet vendor form. Must serve rural (10+ miles from 40K+ population center) or frontier (6 or fewer people/sq mi). No limits on entity types. Contact: RHTP@oha.oregon.gov or (971) 446-0946. OHA held March 25 preparatory webinar for Catalyst Award RFGP. Vendor interest list/directory being developed. Phase 1 Catalyst Awards = $80M (40% of total funds). Collaborative proposals welcomed with one eligible entity as lead proposer/fiduciary. UPDATE: OHA held March 25 preparatory webinar for Catalyst Award RFGP. RFGP has NOT opened yet as of April 7, despite earlier expectation of 'early April.' OHA's latest language says 'spring 2026' for RFGP release and 'early summer 2026' for application deadline. RFGP appears imminent but exact release date uncertain. OHA announced April 14, 2026 webinar (12-1 PM PST) for organizations interested in applying for Catalyst Award Grants. Registration via Microsoft Teams. Slide deck and recording will be posted online after the webinar for those unable to attend. OHA advises organizations to begin identifying ready-to-implement projects now. MAJOR UPDATE (April 16, 2026 OHA announcement): Catalyst Awards RFGP NOW OPEN on OregonBuys (Solicitation #S-44300-00016498) with proposal deadline May 26, 2026 3PM PST. Up to 80 proposals to be funded by early July, ~$80M/year for up to 2 years pending federal approval. Catalyst Awards target projects ready to launch within 2 months addressing at least one of: maternal & child health, co-occurring behavioral health conditions, aging in place, chronic disease. OHA also announced first 12 Immediate Impact Awards: up to $6.5M total this year for ready-to-go projects. Recipients include Columbia Gorge Health Council (community health worker senior visiting), Alano Club of Portland/Comagine Health (naloxone access), Oregon Rural Practice-based Network (chronic disease training + ECHO ACE education), Portland State University (brain health/dementia), Oregon School Nurses Association (school nursing pilot), Oregon Perinatal Collaborative (mobile OB simulation), Healthcare Safety Solutions (EMS simulations), OHSU (24/7 OB addiction advice line), Mosaic Community Health (school-based SUD/mental health), Family Connects Oregon (nurse home visiting), Northwest Regional ESD (medical assistant high school program). Tribal Initiative: $21.7M this year to nine federally recognized Oregon Tribes. Late summer 2026: OHA plans $50.4M in additional direct grants - $35M to 35 rural hospitals, $10M to ~100 rural health clinics, $5M to 33 local public health authorities. Federal approval (which had been blocking spending) received March 19, 2026. Two-phase strategy: 2026-2027 ready-to-go projects; 2028-2030 larger competitive regional grants. OHA partnering with Oregon Office of Rural Health for technical assistance and regional collaboration.",
     "opportunityType": "RFGP (Request for Grant Proposals)",
     "programAddress": "Oregon Health Authority, 500 Summer Street NE, E-20, Salem, OR 97301-1097",
     "programName": "Oregon Rural Health Transformation Program",
